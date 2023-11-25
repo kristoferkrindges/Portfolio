@@ -1,27 +1,12 @@
 import styled from "styled-components";
 
-export const NavigationMobile = styled.div`
-	position: fixed;
-	bottom: 0;
-	/* right: 0; */
+export const Navigation = styled.div`
 	background: ${({ theme }) => theme.container};
-	box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
-	/* padding: 1rem; */
-	border-radius: 2rem 2rem 0 0;
-	width: 100%;
+	width: 400px;
 	height: 70px;
-	display: none;
-	z-index: 999;
-	@media only screen and (max-width: 900px) {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-`;
-
-export const List = styled.ul`
 	display: flex;
-	width: 350px;
+	justify-content: center;
+	align-items: center;
 `;
 
 export const Item = styled.li`
@@ -44,37 +29,18 @@ export const Item = styled.li`
 	}
 
 	&.active a .icon {
-		transform: translateY(-35px);
+		transform: translateY(25px);
 	}
 
 	&.active a .text {
 		opacity: 1;
-		transform: translateY(10px);
+		transform: translateY(-27px);
 	}
-`;
-
-export const Icon = styled.span`
-	position: relative;
-	display: block;
-	line-height: 75px;
-	font-size: 1.5em;
-	text-align: center;
-	transition: 0.5s;
-`;
-
-export const Legend = styled.span`
-	position: absolute;
-	font-weight: 400;
-	font-size: 0.75em;
-	letter-spacing: 0.05em;
-	transition: 0.5s;
-	opacity: 0;
-	transform: translateY(20px);
 `;
 
 export const Indicator = styled.div`
 	position: absolute;
-	top: -50%;
+	top: 40%;
 	width: 70px;
 	height: 70px;
 	background: ${({ theme }) => theme.secondColor};
@@ -82,7 +48,7 @@ export const Indicator = styled.div`
 	border: 6px solid ${({ theme }) => theme.background};
 	transition: 0.5s;
 
-	&::before {
+	/* &::before {
 		content: "";
 		position: absolute;
 		top: 50%;
@@ -104,5 +70,5 @@ export const Indicator = styled.div`
 		background-color: transparent;
 		border-top-left-radius: 20px;
 		box-shadow: 0px -10px 0 0 ${({ theme }) => theme.background};
-	}
+	} */
 `;

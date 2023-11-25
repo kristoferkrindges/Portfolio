@@ -7,7 +7,6 @@ export default function DarkModeHook() {
 		return null;
 	}
 	const { setTheme, theme } = themeContext;
-
 	const alterDarkMode = () => {
 		if (theme === "light") {
 			setTheme("dark");

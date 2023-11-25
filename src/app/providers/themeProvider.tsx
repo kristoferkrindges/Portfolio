@@ -15,7 +15,8 @@ interface ThemeContextProps {
 export const ThemeContext = createContext<ThemeContextProps | null>(null);
 
 export default function ThemeProvider() {
-	const [theme, setTheme] = useState("light");
+	const local = localStorage.getItem("darkmode");
+	const [theme, setTheme] = useState(local ? local : "light");
 	const themeStyle = theme === "light" ? lightTheme : darkTheme;
 
 	const contextValue: ThemeContextProps = { setTheme, theme };

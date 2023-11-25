@@ -1,21 +1,16 @@
 import Link from "next/link";
-import { NavigationMobile, List, Item, Legend, Icon, Indicator } from "./style";
+import { Navigation, Item, Indicator } from "./style";
 import {
 	AboutIcon,
 	ContactIcon,
 	HomeIcon,
-	LanguageIcon,
-	MoonIcon,
 	ProjectsIcon,
-	SettingsIcon,
-	SunIcon,
 } from "../../icons/iO5Icons.styled";
 import { useState } from "react";
-import SettingsMenu from "../settingsMenu";
+import { Icon, Legend, List } from "../mobileMenu/style";
 
-export default function MobileMenu() {
+export default function NavigationMenu() {
 	const [itemActive, setItemActive] = useState("Home");
-	const [menuSettings, setMenuSettings] = useState(false);
 
 	const itemActiveStyles: { [key: string]: { transform: string } } = {
 		Home: { transform: `translateX(calc(70px*0))` },
@@ -24,12 +19,8 @@ export default function MobileMenu() {
 		Contact: { transform: `translateX(calc(70px*3))` },
 	};
 
-	const handlerMenu = () => {
-		setMenuSettings(menuSettings ? false : true);
-	};
-
 	return (
-		<NavigationMobile>
+		<Navigation>
 			<List>
 				<Item
 					className={itemActive === "Home" ? "active" : "drop"}
@@ -88,17 +79,8 @@ export default function MobileMenu() {
 					</Link>
 				</Item>
 
-				<Item onClick={handlerMenu}>
-					{menuSettings && <SettingsMenu handlerMenu={handlerMenu} />}
-					<Link href="#">
-						<Icon className="icon">
-							<SettingsIcon />
-						</Icon>
-						<Legend className="text">DarkMode</Legend>
-					</Link>
-				</Item>
 				<Indicator style={itemActiveStyles[itemActive]} />
 			</List>
-		</NavigationMobile>
+		</Navigation>
 	);
 }
