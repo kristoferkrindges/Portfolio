@@ -1,3 +1,5 @@
-export default function Home() {
-	return <h1>Oi</h1>;
+import ThemeProvider from "./providers/themeProvider";
+
+export default function Initials() {
+	return <ThemeProvider />;
 }
