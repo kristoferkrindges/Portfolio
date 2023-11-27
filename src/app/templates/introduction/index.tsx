@@ -1,16 +1,12 @@
 import React from "react";
-import { IntroductionContainer, Card } from "./style";
-import BoxOne from "@/app/components/features/introduction/boxOne";
-import BoxTwo from "@/app/components/features/introduction/boxTwo";
-import Circle from "@/app/components/features/introduction/circle";
+import { IntroductionContainer } from "./style";
+import DesktopIntroduction from "@/app/components/features/introduction/desktop";
+import MobileIntroduction from "@/app/components/features/introduction/mobile";
 export default function IntroductionTemplate() {
 	return (
 		<IntroductionContainer>
-			<Card>
-				<BoxOne />
-				<BoxTwo />
-				<Circle />
-			</Card>
+			<DesktopIntroduction />
+			<MobileIntroduction />
 		</IntroductionContainer>
 	);
 }

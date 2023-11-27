@@ -10,7 +10,19 @@ import {
 	IoPersonCircle,
 	IoEarth,
 	IoSettings,
+	IoAlbums,
+	IoBook,
+	IoMedal,
+	IoLogoReact,
 } from "react-icons/io5";
+
+export const ReactIcon = styled(IoLogoReact)``;
+
+export const ProjectIcon = styled(IoAlbums)``;
+
+export const DegreeIcon = styled(IoBook)``;
+
+export const ExperienceIcon = styled(IoMedal)``;
 
 export const HomeIcon = styled(IoHome)``;
 
