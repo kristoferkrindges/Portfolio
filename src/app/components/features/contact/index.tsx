@@ -1,19 +1,23 @@
 import React, { useContext } from "react";
-import BoxOneAbout from "./boxOne";
 import { LanguageContext } from "@/app/contexts/languageContext";
-import BoxTwoAbout from "./boxTwo";
 import { H2, H5 } from "../../titles/index.styled";
 import { Section, SeparatorSection } from "../../containers/containers.styled";
+import BoxOneContact from "./boxOne";
+import BoxTwoContact from "./boxTwo";
 
-export default function About() {
+export default function Contact() {
 	const { language } = useContext(LanguageContext) || {};
 	return (
 		<Section>
-			<H2>{language === "Portuguese" ? "Sobre" : "About Me"}</H2>
-			<H5>{language === "Portuguese" ? "Conheça mais" : "Get To Know"}</H5>
+			<H2>{language === "Portuguese" ? "Contato" : "Contact"}</H2>
+			<H5 style={{ marginBottom: `3rem` }}>
+				{language === "Portuguese"
+					? "Vamos trabalhar juntos"
+					: "Let's work together"}
+			</H5>
 			<SeparatorSection>
-				<BoxOneAbout />
-				<BoxTwoAbout />
+				<BoxOneContact />
+				<BoxTwoContact />
 			</SeparatorSection>
 		</Section>
 	);

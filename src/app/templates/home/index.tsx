@@ -4,6 +4,7 @@ import IntroductionTemplate from "../introduction";
 import { Container } from "./style";
 import AboutTemplate from "../about";
 import ProjectsTemplate from "../projects";
+import Contact from "@/app/components/features/contact";
 
 export default function HomeTemplate() {
 	return (
@@ -14,6 +15,7 @@ export default function HomeTemplate() {
 				<IntroductionTemplate />
 				<AboutTemplate />
 				<ProjectsTemplate />
+				<Contact />
 			</Container>
 		</>
 	);

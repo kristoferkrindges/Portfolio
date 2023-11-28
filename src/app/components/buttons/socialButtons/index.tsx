@@ -20,7 +20,7 @@ export default function SocialButtons({ type }: SocialButtonsProps) {
 		<>
 			{type === "Github" && (
 				<Link href="https://github.com/kristoferkrindges">
-					<SocialButton backgroundColor={`#000`}>
+					<SocialButton backgroundColor={`#171616`}>
 						<GithubIcon />
 					</SocialButton>
 				</Link>
@@ -33,7 +33,7 @@ export default function SocialButtons({ type }: SocialButtonsProps) {
 				</Link>
 			)}
 			{type === "Gmail" && (
-				<SocialButton backgroundColor={`red`} onClick={handleEmailClick}>
+				<SocialButton backgroundColor={`#c71610`} onClick={handleEmailClick}>
 					<GmailIcon />
 				</SocialButton>
 			)}
