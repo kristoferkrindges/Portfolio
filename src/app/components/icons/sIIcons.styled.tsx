@@ -1,5 +1,13 @@
 import styled from "styled-components";
-import { SiGmail, SiDotnet, SiMongodb, SiPostgresql } from "react-icons/si";
+import {
+	SiGmail,
+	SiDotnet,
+	SiMongodb,
+	SiPostgresql,
+	SiFirebase,
+} from "react-icons/si";
+
+export const FirebaseIcon = styled(SiFirebase)``;
 
 export const PostgreIcon = styled(SiPostgresql)``;
 
