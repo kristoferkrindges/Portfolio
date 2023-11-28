@@ -3,6 +3,7 @@ import TopSideMenu from "@/app/components/menus/topSideMenu";
 import IntroductionTemplate from "../introduction";
 import { Container } from "./style";
 import AboutTemplate from "../about";
+import ProjectsTemplate from "../projects";
 
 export default function HomeTemplate() {
 	return (
@@ -12,6 +13,7 @@ export default function HomeTemplate() {
 			<Container>
 				<IntroductionTemplate />
 				<AboutTemplate />
+				<ProjectsTemplate />
 			</Container>
 		</>
 	);

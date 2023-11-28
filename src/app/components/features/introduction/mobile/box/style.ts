@@ -90,10 +90,27 @@ export const Photo = styled.div`
 
 	@media only screen and (max-width: 900px) {
 		.github {
+			top: -60px;
+			left: 140px;
+		}
+
+		.linkedin {
+			top: 25%;
+			left: -60px;
+		}
+
+		.gmail {
+			top: 25%;
+			right: -60px;
+		}
+	}
+
+	/* @media only screen and (max-width: 900px) {
+		.github {
 			top: -80px;
 			left: 140px;
 		}
-	}
+	} */
 
 	@media only screen and (max-height: 837px) {
 		.github {
@@ -123,6 +140,23 @@ export const Photo = styled.div`
 		.gmail {
 			top: 25%;
 			right: -60px;
+		}
+	}
+
+	@media only screen and (max-width: 370px) {
+		.github {
+			top: -45px;
+			left: 100px;
+		}
+
+		.linkedin {
+			top: 25%;
+			left: -45px;
+		}
+
+		.gmail {
+			top: 25%;
+			right: -45px;
 		}
 	}
 `;

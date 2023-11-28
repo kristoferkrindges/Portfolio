@@ -44,9 +44,21 @@ export const SocialButton = styled.button<SocialButtonProps>`
 		transform: scaleY(1);
 	}
 
+	@media only screen and (max-width: 1000px) {
+		width: 1.8em;
+		height: 1.8em;
+		font-size: 1.8em;
+	}
+
 	@media only screen and (max-width: 440px) {
 		width: 1.7em;
 		height: 1.7em;
 		font-size: 1.7em;
+	}
+
+	@media only screen and (max-width: 370px) {
+		width: 1.5em;
+		height: 1.5em;
+		font-size: 1.5em;
 	}
 `;

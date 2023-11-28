@@ -5,7 +5,10 @@ import {
 	FaJava,
 	FaNodeJs,
 	FaPython,
+	FaChrome,
 } from "react-icons/fa";
+
+export const ChromeIcon = styled(FaChrome)``;
 
 export const PythonIcon = styled(FaPython)``;
 
