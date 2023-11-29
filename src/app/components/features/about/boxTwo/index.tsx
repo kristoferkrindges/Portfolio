@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
 	BoxTwoContainer,
 	CardContent,
@@ -17,8 +17,14 @@ import {
 } from "@/app/components/icons/fAIcons.styled";
 import { GmailIcon } from "@/app/components/icons/sIIcons.styled";
 import KristoferPhoto from "../../../../assets/images/kristofer.png";
+import Link from "next/link";
+import { LanguageContext } from "@/app/contexts/languageContext";
 
 export default function BoxTwoAbout() {
+	const { language } = useContext(LanguageContext) || {};
+	const handleEmailClick = () => {
+		window.location.href = `mailto:kristoferkrindges@gmail.com`;
+	};
 	return (
 		<BoxTwoContainer>
 			<CardContent>
@@ -26,13 +32,21 @@ export default function BoxTwoAbout() {
 					<Logo src={KristoferPhoto.src} />
 				</Photo>
 				<Icons>
-					<GithubIcon />
-					<LinkedinIcon />
-					<GmailIcon />
+					<Link href={"https://github.com/kristoferkrindges"}>
+						<GithubIcon />
+					</Link>
+					<Link href={"https://www.linkedin.com/in/kristoferkrindgesprofile/"}>
+						<LinkedinIcon />
+					</Link>
+					<GmailIcon onClick={handleEmailClick} />
 				</Icons>
 				<NameSubject>
 					<Name>{"Kristofer Krindges"}</Name>
-					<Subject>kristoferkrindges@gmail.com</Subject>
+					<Subject>
+						{language === "Portuguese"
+							? "Desenvolvedor de Software"
+							: "Software Developer"}
+					</Subject>
 				</NameSubject>
 				<Buttons>
 					<HireMe>Download CV</HireMe>

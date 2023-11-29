@@ -54,6 +54,11 @@ export const Icons = styled.div`
 	align-items: center;
 	gap: 2rem;
 	color: #ffff;
+
+	a {
+		color: #ffff;
+	}
+
 	svg {
 		font-size: 1.5rem;
 		transition: all 0.3s ease;

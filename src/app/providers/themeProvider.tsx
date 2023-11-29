@@ -6,6 +6,7 @@ import { GlobalStyle } from "../styles/globalStyles";
 import Home from "../templates/home";
 import { LanguageProvider } from "../contexts/languageContext";
 import { DarkModeProvider } from "../contexts/darkModeContext";
+import { ApiEmailProvider } from "../contexts/apiEmailContext";
 
 interface ThemeContextProps {
 	setTheme: React.Dispatch<React.SetStateAction<string>>;
@@ -25,11 +26,13 @@ export default function ThemeProvider() {
 		<ThemeContext.Provider value={contextValue}>
 			<ThemeStyle theme={themeStyle}>
 				<GlobalStyle />
-				<LanguageProvider>
-					<DarkModeProvider>
-						<Home />
-					</DarkModeProvider>
-				</LanguageProvider>
+				<ApiEmailProvider>
+					<LanguageProvider>
+						<DarkModeProvider>
+							<Home />
+						</DarkModeProvider>
+					</LanguageProvider>
+				</ApiEmailProvider>
 			</ThemeStyle>
 		</ThemeContext.Provider>
 	);

@@ -14,7 +14,10 @@ import {
 	IoBook,
 	IoMedal,
 	IoLogoReact,
+	IoMail,
 } from "react-icons/io5";
+
+export const EmailIcon = styled(IoMail)``;
 
 export const ReactIcon = styled(IoLogoReact)``;
 
