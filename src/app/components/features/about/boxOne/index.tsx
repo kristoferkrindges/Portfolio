@@ -104,7 +104,9 @@ export default function BoxOneAbout() {
 						existing ones, and I have deep knowledge in Java, C#, Node, React,
 						React Native and PostgreSQL and MongoDB NoSQL databases.`}
 				</Text>
-				<Button style={{ top: `40px` }}>{`Let's Talk`}</Button>
+				<Button style={{ top: `40px` }}>
+					{language === "Portuguese" ? "Vamos conversar" : "Let's Talk"}
+				</Button>
 			</Content>
 		</BoxOneContainer>
 	);

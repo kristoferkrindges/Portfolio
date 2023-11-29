@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { ChangeEvent, useContext, useState } from "react";
 import { LanguageContext } from "@/app/contexts/languageContext";
 import {
 	BoxTwoContactContainer,
@@ -13,6 +13,7 @@ import {
 	Area,
 	TextArea,
 	LabelText,
+	ContentError,
 } from "./style";
 import { Button } from "../../introduction/desktop/boxTwo/style";
 import {
@@ -20,13 +21,86 @@ import {
 	EmailIcon,
 	KristoferIcon,
 } from "@/app/components/icons/iO5Icons.styled";
+import { ApiEmailContext } from "@/app/contexts/apiEmailContext";
+import { TailSpin } from "react-loader-spinner";
+import sendEmail from "@/app/api/email/send/apiEmail";
+
+interface CustomInputProps {
+	type: "name" | "email";
+	value: string | undefined;
+	onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+	minLength: number;
+	maxLength: number;
+}
 
 export default function BoxTwoContact() {
 	const { language } = useContext(LanguageContext) || {};
+	const { getEmail } = useContext(ApiEmailContext) || {};
 
-	const [nameChange, setNameChange] = useState();
-	const [emailChange, setEmailChange] = useState();
-	const [text, setText] = useState();
+	const [nameChange, setNameChange] = useState<string | undefined>(undefined);
+	const [emailChange, setEmailChange] = useState<string | undefined>(undefined);
+	const [text, setText] = useState<string | undefined>(undefined);
+	const [contentError, setContentError] = useState<string | undefined>(
+		undefined
+	);
+	const [loader, setLoader] = useState<boolean>(false);
+	const [error, setError] = useState<boolean>(false);
+
+	const myServerFunction = async () => {
+		if (!nameChange) {
+			setError(true);
+			setContentError(
+				language === "Portuguese" ? "Nome é obrigatório!" : "Name is required!"
+			);
+			return;
+		}
+		if (!emailChange) {
+			setError(true);
+			setContentError(
+				language === "Portuguese"
+					? "Email é obrigatório!"
+					: "Email is required!"
+			);
+			return;
+		}
+		if (!text) {
+			setError(true);
+			setContentError(
+				language === "Portuguese"
+					? "Menssagem é obrigatório!"
+					: "Menssagem is required!"
+			);
+			return;
+		}
+
+		try {
+			setLoader(true);
+			const result = await sendEmail({
+				from: "onboarding@resend.dev",
+				to: "thecontt06@gmail.com",
+				subject: "Portfolio CONTACT email",
+				text: `The People ${nameChange} send a message: @@ ${text} @@ .com o email ${emailChange}`,
+			});
+			setError(false);
+			setLoader(false);
+			setContentError(
+				language === "Portuguese"
+					? "Email enviado com sucesso!"
+					: "Email successfully sent!"
+			);
+			return;
+		} catch (error) {
+			console.error(error);
+			setError(false);
+			setLoader(false);
+			setContentError(
+				language === "Portuguese"
+					? "Email enviado com sucesso!"
+					: "Email successfully sent!"
+			);
+			return;
+		}
+	};
 
 	return (
 		<BoxTwoContactContainer>
@@ -41,11 +115,11 @@ export default function BoxTwoContact() {
 						<InputName
 							type="name"
 							value={nameChange}
-							onChange={(e) => {
+							onChange={(e: ChangeEvent<HTMLInputElement>) => {
 								setNameChange(e.target.value);
 							}}
-							minlength="3"
-							maxlength="31"
+							minLength={3}
+							maxLength={31}
 						/>
 						<TextInput>
 							<KristoferIcon />
@@ -61,8 +135,8 @@ export default function BoxTwoContact() {
 							onChange={(e) => {
 								setEmailChange(e.target.value);
 							}}
-							minlength="3"
-							maxlength="41"
+							minLength={3}
+							maxLength={41}
 						/>
 						<TextInput>
 							<EmailIcon />
@@ -74,9 +148,8 @@ export default function BoxTwoContact() {
 				{language === "Portuguese" ? "Menssagem" : "Message"}
 			</LabelText>
 			<Area>
-				{/* <LabelText>{language === "Portuguese" ? "Nome" : "Name"}</LabelText> */}
 				<TextArea
-					rows="1"
+					rows={1}
 					placeholder={
 						language === "Portuguese"
 							? "Digite sua menssagem..."
@@ -87,7 +160,27 @@ export default function BoxTwoContact() {
 					}}
 					maxLength={140}
 				></TextArea>
-				<Button>Submit</Button>
+				{contentError && (
+					<ContentError style={error ? { color: `red` } : { color: `green` }}>
+						{contentError}
+					</ContentError>
+				)}
+				<Button onClick={myServerFunction}>
+					{loader ? (
+						<TailSpin
+							height="20"
+							width="20"
+							color="#ffff"
+							ariaLabel="tail-spin-loading"
+							radius="1"
+							wrapperStyle={{}}
+							wrapperClass=""
+							visible={true}
+						/>
+					) : (
+						"Submit"
+					)}
+				</Button>
 			</Area>
 		</BoxTwoContactContainer>
 	);

@@ -132,7 +132,7 @@ export const Area = styled.div`
 	padding: 0 1rem;
 
 	& button {
-		top: 2.5rem;
+		top: 3rem;
 		padding: 0.6rem 7rem;
 	}
 
@@ -153,8 +153,7 @@ export const LabelText = styled.span`
 	display: flex;
 	justify-content: flex-start;
 	margin-left: 2rem;
-	margin-top: 1rem;
-	margin-bottom: 3%;
+	margin-bottom: 2%;
 	font-size: 1.2em;
 	color: ${({ theme }) => theme.text};
 	font-weight: 600;
@@ -162,4 +161,12 @@ export const LabelText = styled.span`
 	@media (max-width: 700px) {
 		font-size: 1em;
 	}
+`;
+
+export const ContentError = styled.span`
+	text-align: center;
+	margin-top: 1.5rem;
+	/* position: absolute;
+	bottom: 1.5rem;
+	left: 25rem; */
 `;
