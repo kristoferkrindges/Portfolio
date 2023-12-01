@@ -15,7 +15,16 @@ import {
 	IoMedal,
 	IoLogoReact,
 	IoMail,
+	IoServerOutline,
+	IoColorPaletteOutline,
+	IoBuild,
 } from "react-icons/io5";
+
+export const ToolsIcon = styled(IoBuild)``;
+
+export const UxIcon = styled(IoColorPaletteOutline)``;
+
+export const BackEndIcon = styled(IoServerOutline)``;
 
 export const EmailIcon = styled(IoMail)``;
 

@@ -48,11 +48,13 @@ export default function Box() {
 			<Pharase>
 				{language === "Portuguese" ? "Eu sou um desenvolvedor" : "I am a"}{" "}
 			</Pharase>
-			<Pharase style={{ color: "#2c2c6c" }}>
+			<Pharase>
 				<Name>
-					{text} <Cursor />
+					{text}
+					<Cursor /> {language === "English" && "Developer"}
 				</Name>
 			</Pharase>
+
 			<Lists>
 				<List>
 					{language === "Portuguese" ? "Projetos" : "Projects"}

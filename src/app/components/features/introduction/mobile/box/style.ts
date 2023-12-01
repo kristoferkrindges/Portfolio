@@ -207,7 +207,7 @@ export const Name = styled.span`
 	letter-spacing: 0.1rem;
 	font-weight: 600;
 	line-height: 1.1em;
-	color: ${({ theme }) => theme.secondColor};
+	/* color: ${({ theme }) => theme.secondColor}; */
 
 	@media only screen and (max-width: 900px) {
 		font-size: 1.4rem;
