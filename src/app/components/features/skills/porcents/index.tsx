@@ -1,21 +1,44 @@
 import React from "react";
-import { ContactItem } from "./style";
+import { SkillBox, TitleName, SkillBar, SkillPer, ToolTip } from "./style";
 
-export default function Porcents({ porcent, number }) {
-	console.log(porcent);
+interface PorcentsProps {
+	porcentsState: boolean;
+	number: number;
+	name: string;
+	porcents: string;
+	icon: React.ReactNode;
+}
+
+export default function Porcents({
+	porcentsState,
+	number,
+	name,
+	porcents,
+	icon,
+}: PorcentsProps) {
 	return (
-		<ContactItem
+		<SkillBox
 			style={
-				porcent
+				porcentsState
 					? {
 							opacity: 1,
 							transform: `scale(1)`,
-							transitionDelay: `calc(0.25s * ${number})`,
+							transitionDelay: `calc(0.4s * ${number})`,
 					  }
 					: {}
 			}
 		>
-			oi
-		</ContactItem>
+			<TitleName>
+				{icon}
+				{name}
+			</TitleName>
+			{porcentsState && (
+				<SkillBar>
+					<SkillPer style={{ width: `${porcents}%` }}>
+						<ToolTip>{porcents}%</ToolTip>
+					</SkillPer>
+				</SkillBar>
+			)}
+		</SkillBox>
 	);
 }

@@ -16,7 +16,7 @@ export default function Skills() {
 	return (
 		<Section>
 			<H2>{language === "Portuguese" ? "Habilidades" : "Skills"}</H2>
-			<H5 style={{ marginBottom: `3rem` }}>
+			<H5 style={{ marginBottom: `4rem` }}>
 				{language === "Portuguese" ? "Meus Serviços" : "My Services"}
 			</H5>
 			<SeparatorCards>

@@ -6,7 +6,13 @@ import {
 	FaNodeJs,
 	FaPython,
 	FaChrome,
+	FaLightbulb,
+	FaGitAlt,
 } from "react-icons/fa";
+
+export const GitIcon = styled(FaGitAlt)``;
+
+export const CreativityIcon = styled(FaLightbulb)``;
 
 export const ChromeIcon = styled(FaChrome)``;
 

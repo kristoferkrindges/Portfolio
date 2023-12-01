@@ -5,7 +5,22 @@ import {
 	SiMongodb,
 	SiPostgresql,
 	SiFirebase,
+	SiCsharp,
+	SiFigma,
+	SiAdobephotoshop,
+	SiPostman,
+	SiVisualstudio,
 } from "react-icons/si";
+
+export const VsCodeIcon = styled(SiVisualstudio)``;
+
+export const PostmanIcon = styled(SiPostman)``;
+
+export const PhotoshopIcon = styled(SiAdobephotoshop)``;
+
+export const FigmaIcon = styled(SiFigma)``;
+
+export const CSharpIcon = styled(SiCsharp)``;
 
 export const FirebaseIcon = styled(SiFirebase)``;
 
