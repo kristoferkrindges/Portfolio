@@ -5,6 +5,7 @@ import { Container } from "./style";
 import AboutTemplate from "../about";
 import ProjectsTemplate from "../projects";
 import Contact from "@/app/components/features/contact";
+import SkillsTemplate from "../skills";
 
 export default function HomeTemplate() {
 	return (
@@ -14,6 +15,7 @@ export default function HomeTemplate() {
 			<Container>
 				<IntroductionTemplate />
 				<AboutTemplate />
+				<SkillsTemplate />
 				<ProjectsTemplate />
 				<Contact />
 			</Container>
