@@ -7,11 +7,14 @@ import {
 	ProjectsIcon,
 	SettingsIcon,
 } from "../../icons/iO5Icons.styled";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Icon, Legend, List } from "../mobileMenu/style";
+import { LanguageContext } from "@/app/contexts/languageContext";
 
 export default function NavigationMenu() {
 	const [itemActive, setItemActive] = useState("Home");
+
+	const { language } = useContext(LanguageContext) || {};
 
 	const itemActiveStyles: { [key: string]: { transform: string } } = {
 		Home: { transform: `translateX(calc(70px*0))` },
@@ -35,7 +38,9 @@ export default function NavigationMenu() {
 						>
 							<HomeIcon />
 						</Icon>
-						<Legend className="text">Home</Legend>
+						<Legend className="text">
+							{language === "Portuguese" ? "Inicio" : "Home"}
+						</Legend>
 					</Link>
 				</Item>
 				<Item
@@ -49,7 +54,9 @@ export default function NavigationMenu() {
 						>
 							<AboutIcon />
 						</Icon>
-						<Legend className="text">About</Legend>
+						<Legend className="text">
+							{language === "Portuguese" ? "Sobre" : "About"}
+						</Legend>
 					</Link>
 				</Item>
 				<Item
@@ -63,7 +70,9 @@ export default function NavigationMenu() {
 						>
 							<SettingsIcon />
 						</Icon>
-						<Legend className="text">Skills</Legend>
+						<Legend className="text">
+							{language === "Portuguese" ? "Habilidades" : "Skills"}
+						</Legend>
 					</Link>
 				</Item>
 				<Item
@@ -77,7 +86,9 @@ export default function NavigationMenu() {
 						>
 							<ProjectsIcon />
 						</Icon>
-						<Legend className="text">Projects</Legend>
+						<Legend className="text">
+							{language === "Portuguese" ? "Projetos" : "Projects"}
+						</Legend>
 					</Link>
 				</Item>
 				<Item
@@ -91,7 +102,9 @@ export default function NavigationMenu() {
 						>
 							<ContactIcon />
 						</Icon>
-						<Legend className="text">Contact</Legend>
+						<Legend className="text">
+							{language === "Portuguese" ? "Contato" : "Contact"}
+						</Legend>
 					</Link>
 				</Item>
 

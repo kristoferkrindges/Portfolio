@@ -29,6 +29,7 @@ export const SeparatorSection = styled.div`
 	display: flex;
 	align-items: center;
 	width: 100%;
+	height: 100%;
 	transition: 0.5s;
 	padding: 1rem;
 	gap: 2rem;

@@ -24,7 +24,23 @@ import {
 	PostgreIcon,
 } from "@/app/components/icons/sIIcons.styled";
 
-export default function Card({ photo, name, phrase, git, link, technologies }) {
+interface CardProps {
+	photo: string;
+	name: string;
+	phrase: string;
+	git: string;
+	link: string;
+	technologies: string[];
+}
+
+export default function Card({
+	photo,
+	name,
+	phrase,
+	git,
+	link,
+	technologies,
+}: CardProps) {
 	return (
 		<CardContainer>
 			<ImageBox className="imgBx">

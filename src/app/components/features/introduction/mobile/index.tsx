@@ -4,7 +4,7 @@ import Box from "./box";
 
 export default function MobileIntroduction() {
 	return (
-		<Card>
+		<Card id="Home">
 			<Box />
 		</Card>
 	);

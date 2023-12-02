@@ -159,7 +159,7 @@ export const ButtonSocial = styled.button<SocialButtonProps>`
 
 	&:hover,
 	&:focus {
-		color: black;
+		/* color: black; */
 	}
 
 	&:hover::before,

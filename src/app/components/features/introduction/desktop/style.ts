@@ -9,7 +9,17 @@ export const BoxContainer = styled.div`
 	width: 100%;
 	margin-top: 3rem;
 	justify-content: end;
-	@media only screen and (max-width: 1478px) {
+
+	@media only screen and (max-width: 1539px) {
+		margin-bottom: 4rem;
+		margin-top: 2rem;
+	}
+
+	@media only screen and (max-width: 1509px) {
+		margin-top: 2rem;
+		margin-bottom: 5rem;
+	}
+	@media only screen and (max-width: 999px) {
 		display: none;
 	}
 `;
@@ -23,8 +33,4 @@ export const Card = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	/* margin-bottom: 3.7rem; */
-
-	@media only screen and (max-width: 1200px) {
-		display: none;
-	}
 `;

@@ -31,8 +31,8 @@ export default function BoxTwo() {
 				<Pharase>
 					{language === "Portuguese" ? "Eu sou um desenvolvedor" : "I am a"}{" "}
 				</Pharase>
-				<Pharase style={{ fontSize: "2rem" }}>
-					<Name style={{ fontSize: "2rem" }}>
+				<Pharase>
+					<Name>
 						{text}
 						<Cursor /> {language === "English" && "Developer"}
 					</Name>

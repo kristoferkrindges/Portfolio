@@ -15,7 +15,7 @@ export const ContainerSideTop = styled.div`
 	top: 0;
 	z-index: 999;
 
-	@media only screen and (max-width: 900px) {
+	@media only screen and (max-width: 999px) {
 		display: none;
 	}
 `;

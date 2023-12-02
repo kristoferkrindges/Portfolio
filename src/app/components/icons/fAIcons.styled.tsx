@@ -8,7 +8,10 @@ import {
 	FaChrome,
 	FaLightbulb,
 	FaGitAlt,
+	FaPlus,
 } from "react-icons/fa";
+
+export const PlusIcon = styled(FaPlus)``;
 
 export const GitIcon = styled(FaGitAlt)``;
 

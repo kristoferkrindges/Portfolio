@@ -35,6 +35,42 @@ export const BoxOneContainer = styled.div`
 		box-shadow: -6px 6px ${({ theme }) => theme.background};
 	}
 
+	@media only screen and (max-width: 1700px) {
+		&::before {
+			top: 125px;
+			left: -1px;
+		}
+
+		&::after {
+			bottom: -6px;
+			left: 198px;
+		}
+	}
+
+	@media only screen and (max-width: 1488px) {
+		&::before {
+			top: 160px;
+			left: -1px;
+		}
+
+		&::after {
+			bottom: -6px;
+			left: 148px;
+		}
+	}
+
+	@media only screen and (max-width: 1400px) {
+		&::before {
+			top: 168px;
+			left: -1px;
+		}
+
+		&::after {
+			bottom: -6px;
+			left: 199px;
+		}
+	}
+
 	@keyframes progress {
 		0% {
 			width: 0;

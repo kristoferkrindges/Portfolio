@@ -12,27 +12,14 @@ export const BoxContainer = styled.div`
 	gap: 1rem;
 	justify-content: center;
 	flex-direction: column;
-	height: 440px;
-	margin-top: 20rem;
+	height: 430px;
 
-	@media only screen and (max-width: 900px) {
-		margin-top: 18.5rem;
-		height: 350px;
+	@media only screen and (max-width: 899px) {
 		width: 95%;
 	}
 
-	@media only screen and (max-height: 837px) {
-		margin-top: 15rem;
-	}
-
-	@media only screen and (max-height: 800px) {
-		margin-top: 16.5rem;
-		height: 350px;
-	}
-
-	@media only screen and (max-width: 440px) {
-		height: 300px;
-		margin-top: 12rem;
+	@media only screen and (max-width: 429px) {
+		height: 400px;
 	}
 `;
 
@@ -45,8 +32,8 @@ export const Circle = styled.div`
 	border-radius: 50%;
 	border: 10px solid transparent;
 
-	@media only screen and (max-width: 900px) {
-		top: -70%;
+	@media only screen and (max-width: 899px) {
+		top: -50%;
 		width: 350px;
 		height: 350px;
 	}
@@ -58,13 +45,13 @@ export const Circle = styled.div`
 	}
 
 	@media only screen and (max-width: 477px) {
-		top: -50%;
+		top: -38%;
 		width: 300px;
 		height: 300px;
 	}
 
-	@media only screen and (max-width: 440px) {
-		top: -50%;
+	@media only screen and (max-width: 429px) {
+		top: -38%;
 		width: 260px;
 		height: 260px;
 	}
@@ -88,6 +75,23 @@ export const Photo = styled.div`
 		right: -80px;
 	}
 
+	@media only screen and (max-width: 14px) {
+		.github {
+			top: -60px;
+			left: 140px;
+		}
+
+		.linkedin {
+			top: 25%;
+			left: -60px;
+		}
+
+		.gmail {
+			top: 25%;
+			right: -60px;
+		}
+	}
+
 	@media only screen and (max-width: 900px) {
 		.github {
 			top: -60px;
@@ -105,13 +109,6 @@ export const Photo = styled.div`
 		}
 	}
 
-	/* @media only screen and (max-width: 900px) {
-		.github {
-			top: -80px;
-			left: 140px;
-		}
-	} */
-
 	@media only screen and (max-height: 837px) {
 		.github {
 			top: -80px;
@@ -121,15 +118,15 @@ export const Photo = styled.div`
 
 	@media only screen and (max-width: 477px) {
 		.github {
-			top: -80px;
-			left: 110px;
+			top: -65px;
+			left: 115px;
 		}
 	}
 
 	@media only screen and (max-width: 440px) {
 		.github {
 			top: -60px;
-			left: 100px;
+			left: 115px;
 		}
 
 		.linkedin {
@@ -140,6 +137,19 @@ export const Photo = styled.div`
 		.gmail {
 			top: 25%;
 			right: -60px;
+		}
+	}
+
+	@media only screen and (max-width: 429px) {
+		.github {
+			top: -60px;
+			left: 95px;
+		}
+	}
+
+	@media only screen and (max-width: 375px) {
+		.github {
+			left: 100px;
 		}
 	}
 
@@ -164,68 +174,61 @@ export const Photo = styled.div`
 export const Pharase = styled.span`
 	position: relative;
 	top: 125px;
-	font-size: 1.5rem;
+	font-size: 1.1rem;
 	letter-spacing: 0.1rem;
 	font-weight: 600;
 	line-height: 1.1em;
 	color: ${({ theme }) => theme.text};
 
-	@media only screen and (max-width: 900px) {
+	@media only screen and (max-width: 899px) {
 		top: 70px;
-		font-size: 1.3rem;
+	}
+	@media only screen and (max-width: 630px) {
+		font-size: 0.9rem;
 	}
 
-	@media only screen and (max-height: 800px) {
-		top: 95px;
-		font-size: 1.2rem;
-	}
-
-	@media only screen and (max-width: 610px) {
-		font-size: 1rem;
-	}
-
-	@media only screen and (max-width: 526px) {
-		font-size: 0.8rem;
-	}
-
-	@media only screen and (max-width: 477px) {
-		top: 70px;
+	@media only screen and (max-width: 458px) {
+		font-size: 0.75rem;
 	}
 
 	@media only screen and (max-width: 440px) {
+		top: 45px;
+	}
+
+	@media only screen and (max-width: 427px) {
+		font-size: 0.7rem;
+	}
+
+	@media only screen and (max-width: 416px) {
 		font-size: 0.6rem;
 	}
 
-	@media only screen and (max-width: 365px) {
-		font-size: 0.5rem;
+	@media only screen and (max-width: 377px) {
+		font-size: 0.55rem;
 	}
 `;
 
 export const Name = styled.span`
 	text-transform: uppercase;
-	font-size: 1.7rem;
+	font-size: 1.3rem;
 	letter-spacing: 0.1rem;
 	font-weight: 600;
 	line-height: 1.1em;
 	/* color: ${({ theme }) => theme.secondColor}; */
 
-	@media only screen and (max-width: 900px) {
-		font-size: 1.4rem;
-	}
-
-	@media only screen and (max-height: 800px) {
-		font-size: 1.3rem;
-	}
-
-	@media only screen and (max-width: 610px) {
+	@media only screen and (max-width: 630px) {
 		font-size: 1.1rem;
 	}
 
 	@media only screen and (max-width: 526px) {
+		font-size: 0.9rem;
+	}
+
+	@media only screen and (max-width: 416px) {
 		font-size: 0.8rem;
 	}
 
-	@media only screen and (max-width: 440px) {
+	@media only screen and (max-width: 377px) {
 		font-size: 0.7rem;
 	}
 
@@ -246,19 +249,25 @@ export const Lists = styled.ul`
 
 	@media only screen and (max-width: 900px) {
 		top: 90px;
-		font-size: 1.3rem;
 	}
 
 	@media only screen and (max-height: 800px) {
 		top: 95px;
 		font-size: 1.2rem;
 	}
-
-	@media only screen and (max-width: 610px) {
+	@media only screen and (max-width: 630px) {
 		font-size: 1rem;
 	}
 
-	@media only screen and (max-width: 526px) {
+	@media only screen and (max-width: 440px) {
+		top: 80px;
+	}
+
+	@media only screen and (max-width: 422px) {
+		font-size: 0.8rem;
+	}
+
+	@media only screen and (max-width: 377px) {
 		font-size: 0.7rem;
 	}
 `;
@@ -331,16 +340,24 @@ export const Button = styled.button`
 		top: 95px;
 	}
 
+	@media only screen and (max-width: 899px) {
+		top: 130px;
+	}
+
 	@media only screen and (max-height: 800px) {
 		top: 95px;
 	}
 
-	@media only screen and (max-width: 526px) {
-		font-size: 0.7rem;
-		top: 110px;
+	@media only screen and (max-width: 630px) {
+		top: 130px;
 	}
 
-	@media only screen and (max-width: 440px) {
-		top: 90px;
+	@media only screen and (max-width: 526px) {
+		font-size: 0.7rem;
+		top: 140px;
+	}
+
+	@media only screen and (max-width: 377px) {
+		font-size: 0.7rem;
 	}
 `;

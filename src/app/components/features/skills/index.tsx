@@ -14,7 +14,7 @@ import {
 export default function Skills() {
 	const { language } = useContext(LanguageContext) || {};
 	return (
-		<Section id="Skills" style={{ minHeight: `90vh` }}>
+		<Section id="Skills" style={{ minHeight: `85vh` }}>
 			<H2>{language === "Portuguese" ? "Habilidades" : "Skills"}</H2>
 			<H5 style={{ marginBottom: `4rem` }}>
 				{language === "Portuguese" ? "Meus Serviços" : "My Services"}
