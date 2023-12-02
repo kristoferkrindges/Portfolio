@@ -8,14 +8,14 @@ import BoxTwoContact from "./boxTwo";
 export default function Contact() {
 	const { language } = useContext(LanguageContext) || {};
 	return (
-		<Section>
+		<Section id="Contact">
 			<H2>{language === "Portuguese" ? "Contato" : "Contact"}</H2>
 			<H5 style={{ marginBottom: `3rem` }}>
 				{language === "Portuguese"
 					? "Vamos trabalhar juntos"
 					: "Let's work together"}
 			</H5>
-			<SeparatorSection>
+			<SeparatorSection style={{ marginBottom: `4rem` }}>
 				<BoxOneContact />
 				<BoxTwoContact />
 			</SeparatorSection>

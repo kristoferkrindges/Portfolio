@@ -13,6 +13,9 @@ export const GlobalStyle = createGlobalStyle`
       list-style: none;
       border: none;
     }
+    html{
+      scroll-behavior: smooth;
+    }
     body {
         background: ${({ theme }) => theme.background};
         color: ${({ theme }) => theme.text};
