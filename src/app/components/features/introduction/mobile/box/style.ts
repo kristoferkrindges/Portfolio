@@ -11,6 +11,7 @@ export const BoxContainer = styled.div`
 	align-items: center;
 	gap: 1rem;
 	justify-content: center;
+	text-align: center;
 	flex-direction: column;
 	height: 430px;
 
@@ -187,24 +188,32 @@ export const Pharase = styled.span`
 		font-size: 0.9rem;
 	}
 
+	@media only screen and (max-width: 527px) {
+		font-size: 0.85rem;
+	}
+
+	@media only screen and (max-width: 480px) {
+		font-size: 0.8rem;
+	}
+
 	@media only screen and (max-width: 458px) {
 		font-size: 0.75rem;
+	}
+
+	@media only screen and (max-width: 441px) {
+		font-size: 0.7rem;
 	}
 
 	@media only screen and (max-width: 440px) {
 		top: 45px;
 	}
 
-	@media only screen and (max-width: 427px) {
-		font-size: 0.7rem;
-	}
-
-	@media only screen and (max-width: 416px) {
+	/* @media only screen and (max-width: 416px) {
 		font-size: 0.6rem;
-	}
+	} */
 
 	@media only screen and (max-width: 377px) {
-		font-size: 0.55rem;
+		font-size: 0.65rem;
 	}
 `;
 
@@ -224,8 +233,16 @@ export const Name = styled.span`
 		font-size: 0.9rem;
 	}
 
-	@media only screen and (max-width: 416px) {
+	@media only screen and (max-width: 469px) {
+		font-size: 0.85rem;
+	}
+
+	@media only screen and (max-width: 460px) {
 		font-size: 0.8rem;
+	}
+
+	@media only screen and (max-width: 430px) {
+		font-size: 0.75rem;
 	}
 
 	@media only screen and (max-width: 377px) {

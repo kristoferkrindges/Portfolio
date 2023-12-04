@@ -22,7 +22,6 @@ export const NavigationMobile = styled.div`
 export const List = styled.ul`
 	display: flex;
 	width: 350px;
-	/* z-index: 200; */
 `;
 
 export const Item = styled.li`

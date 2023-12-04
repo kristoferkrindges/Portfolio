@@ -122,7 +122,7 @@ export default function MobileMenu() {
 					className={itemActive === "Skills" ? "active" : "drop"}
 					onClick={() => setItemActive("Skills")}
 				>
-					<Link href="#Contact">
+					<Link href="#Skills">
 						<Icon
 							className="icon"
 							style={itemActive === "Skills" ? { color: "white" } : {}}
@@ -130,7 +130,7 @@ export default function MobileMenu() {
 							<SettingsIcon />
 						</Icon>
 						<Legend className="text">
-							{language === "Portuguese" ? "Contato" : "Contact"}
+							{language === "Portuguese" ? "Habilidades" : "Skills"}
 						</Legend>
 					</Link>
 				</Item>

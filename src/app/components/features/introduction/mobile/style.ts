@@ -10,6 +10,7 @@ export const Card = styled.div`
 		/* margin-bottom: 5rem; */
 		width: 100%;
 		min-height: 70vh;
+		padding: 1rem;
 	}
 	@media only screen and (max-width: 899px) {
 		margin-top: 11rem;

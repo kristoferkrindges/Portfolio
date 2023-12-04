@@ -7,10 +7,12 @@ import {
 	Pharase,
 	Lists,
 	List,
+	ButtonScroll,
 } from "./style";
 import { LanguageContext } from "@/app/contexts/languageContext";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Link from "next/link";
+import { ScrollDown } from "@/app/components/buttons/scrollDownAndUp/index.styled";
 
 export default function BoxTwo() {
 	const { language } = useContext(LanguageContext) || {};
@@ -37,6 +39,12 @@ export default function BoxTwo() {
 						<Cursor /> {language === "English" && "Developer"}
 					</Name>
 				</Pharase>
+				<ButtonScroll>
+					<Link href="#About">
+						<ScrollDown />
+					</Link>
+				</ButtonScroll>
+
 				<Lists>
 					<List>
 						{language === "Portuguese" ? "Projetos" : "Projects"}

@@ -217,3 +217,13 @@ export const List = styled.li`
 		font-size: 0.9rem;
 	}
 `;
+
+export const ButtonScroll = styled.div`
+	position: absolute;
+	right: -8%;
+	top: 35%;
+
+	@media only screen and (max-width: 1165px) {
+		right: -10%;
+	}
+`;

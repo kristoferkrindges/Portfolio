@@ -8,7 +8,7 @@ import BoxTwoContact from "./boxTwo";
 export default function Contact() {
 	const { language } = useContext(LanguageContext) || {};
 	return (
-		<Section id="Contact">
+		<Section id="Contact" style={{ minHeight: `110vh` }}>
 			<H2>{language === "Portuguese" ? "Contato" : "Contact"}</H2>
 			<H5 style={{ marginBottom: `3rem` }}>
 				{language === "Portuguese"

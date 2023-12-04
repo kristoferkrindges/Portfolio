@@ -19,7 +19,7 @@ export default function TopSideMenu() {
 	return (
 		<ContainerSideTop>
 			<LeftSideTop>
-				<Link href="/">
+				<Link href="#Home">
 					<Photo src={KristoferPhoto.src} />
 				</Link>
 				<Title>Kristofer</Title>
