@@ -64,8 +64,14 @@ export const Subtitle = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0 0.2rem;
+	/* gap: 0 0.2rem; */
+	gap: 0.3rem;
 	text-align: center;
+
+	@media only screen and (max-width: 999px) {
+		flex-direction: column;
+		gap: 1rem;
+	}
 `;
 
 export const Span = styled.span`

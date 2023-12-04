@@ -41,15 +41,10 @@ export default function Footer() {
 					</Link>
 				</RightSideTop>
 				<MidSide>
-					<CopyRightIcon />
-					{/* <Title>
-					{language === "Portuguese"
-						? "Desenvolvedor de Software"
-						: "Software Developer"}
-				</Title> */}
+					{/* <CopyRightIcon /> */}
 					<Subtitle>
-						{/* <CopyRightIcon /> */}
-						<Span>{`Kristofer. ${
+						<CopyRightIcon />
+						<Span>{`${
 							language === "Portuguese"
 								? "Todos os direitos reservados"
 								: "All right reserved"
