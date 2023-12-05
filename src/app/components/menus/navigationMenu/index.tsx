@@ -23,7 +23,6 @@ export default function NavigationMenu() {
 		sections.forEach((section) => {
 			const { top, bottom } = section.getBoundingClientRect();
 
-			// Verifica se a seção está pelo menos 50% visível na tela
 			if (top <= window.innerHeight / 2 && bottom >= window.innerHeight / 2) {
 				setActiveSection(section.id);
 			}
@@ -33,11 +32,10 @@ export default function NavigationMenu() {
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
 
-		// Limpeza do evento quando o componente for desmontado
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
-	}, []); // Adiciona dependências se necessário
+	}, []);
 
 	const sections = [
 		{ id: "Home", text: "Inicio", icon: <HomeIcon /> },

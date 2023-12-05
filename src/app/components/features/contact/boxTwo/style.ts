@@ -6,7 +6,6 @@ export const BoxTwoContactContainer = styled.div`
 	padding: 1rem;
 	border-radius: 2rem;
 	background-color: ${({ theme }) => theme.container};
-	/* border-bottom: 60px solid ${({ theme }) => theme.secondColor}; */
 `;
 
 export const Top = styled.div`
@@ -32,10 +31,6 @@ export const Inputs = styled.div`
 	gap: 0.4rem 1rem;
 	width: 100%;
 	margin-top: 1.5rem;
-
-	/* @media (max-width: 900px) {
-		flex-direction: column;
-	} */
 `;
 export const Controller = styled.div`
 	display: flex;
@@ -166,7 +161,4 @@ export const LabelText = styled.span`
 export const ContentError = styled.span`
 	text-align: center;
 	margin-top: 1.5rem;
-	/* position: absolute;
-	bottom: 1.5rem;
-	left: 25rem; */
 `;

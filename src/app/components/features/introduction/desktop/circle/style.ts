@@ -31,7 +31,6 @@ export const CircleContainer = styled.div`
 export const Photo = styled.div`
 	position: absolute;
 	inset: 0;
-	/* overflow: hidden; */
 	border-radius: 50%;
 
 	.github {

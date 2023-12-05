@@ -1,7 +1,6 @@
 import React from "react";
 
 import Link from "next/link";
-import { KristoferIcon } from "../../icons/iO5Icons.styled";
 import DarkModeButton from "../../buttons/darkMode";
 import {
 	ContainerSideTop,

@@ -5,7 +5,6 @@ export const SkillBox = styled.li`
 	border-radius: 2rem;
 	background-color: ${({ theme }) => theme.container};
 	display: flex;
-	/* align-items: center; */
 	flex-direction: column;
 	gap: 1rem;
 	width: 90%;
@@ -42,7 +41,6 @@ export const SkillPer = styled.span`
 	position: relative;
 	display: block;
 	height: 100%;
-	/* width: 100%; */
 	background-color: ${({ theme }) => theme.secondColor};
 	border-radius: 6px;
 	animation: progress 2s ease-in-out forwards;

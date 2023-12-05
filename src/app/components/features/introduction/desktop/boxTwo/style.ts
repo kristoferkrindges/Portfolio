@@ -98,10 +98,7 @@ export const Button = styled.button`
 	font-size: 1rem;
 	border: 4px solid transparent;
 	box-shadow: 0 0 0 10px ${({ theme }) => theme.container};
-	/* box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4); */
 	transition: 0.5s;
-	/* text-transform: uppercase;
-	letter-spacing: 0.2em; */
 	&::before {
 		content: "";
 		position: absolute;
@@ -135,7 +132,6 @@ export const Button = styled.button`
 `;
 
 export const Pharase = styled.span`
-	/* text-transform: uppercase; */
 	font-size: 1.3rem;
 	letter-spacing: 0.1rem;
 	font-weight: 600;
@@ -167,7 +163,6 @@ export const Name = styled.span`
 	letter-spacing: 0.1rem;
 	font-weight: 600;
 	line-height: 1.1em;
-	/* color: ${({ theme }) => theme.secondColor}; */
 
 	@media only screen and (max-width: 1700px) {
 		font-size: 1.1rem;

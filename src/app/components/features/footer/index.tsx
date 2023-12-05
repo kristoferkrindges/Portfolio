@@ -16,12 +16,7 @@ import {
 	LinkedinIcon,
 } from "../../icons/fAIcons.styled";
 import { LanguageContext } from "@/app/contexts/languageContext";
-import {
-	LeftSideTop,
-	Photo,
-	RightSideTop,
-	Title,
-} from "../../menus/topSideMenu/style";
+import { LeftSideTop, RightSideTop } from "../../menus/topSideMenu/style";
 import { ScrollUp } from "../../buttons/scrollDownAndUp/index.styled";
 import { motion } from "framer-motion";
 import { fadeInBottomVariant } from "@/app/utils/motion";
@@ -49,7 +44,6 @@ export default function Footer() {
 					</Link>
 				</RightSideTop>
 				<MidSide>
-					{/* <CopyRightIcon /> */}
 					<Subtitle>
 						<CopyRightIcon />
 						<Span>{`${

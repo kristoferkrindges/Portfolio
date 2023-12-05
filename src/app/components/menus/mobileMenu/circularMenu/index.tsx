@@ -16,31 +16,38 @@ import { LanguageContext } from "@/app/contexts/languageContext";
 import { ThemeContext } from "@/app/providers/themeProvider";
 import Link from "next/link";
 
-export default function CircularMenu({ openMenu, handlerCircle }) {
+interface CircularMenuProps {
+	openMenu: boolean;
+	handlerCircle: MouseEventHandler;
+}
+
+export default function CircularMenu({
+	openMenu,
+	handlerCircle,
+}: CircularMenuProps) {
 	const { theme } = useContext(ThemeContext) || { theme: "light" };
 	const { alterDarkMode } = useContext(DarkModeContext) || {};
 	const languageContext = useContext(LanguageContext);
 	if (!languageContext) {
 		throw new Error("LanguageContext not provided!");
 	}
-	const { language, handleFilter } = languageContext;
-	const handlerLanguage = () => {
+	const { handleFilter } = languageContext;
+	const handlerLanguage = (evt: React.MouseEvent) => {
 		handleFilter("yourId");
-		handlerCircle();
+		handlerCircle(evt);
 	};
-	const handlerDarkMode = () => {
-		alterDarkMode();
-		handlerCircle();
-		console.log("executado");
+	const handlerDarkMode = (evt: React.MouseEvent) => {
+		alterDarkMode?.();
+		handlerCircle(evt);
 	};
-
+	console.log(theme);
 	return (
 		<CircularContainer>
 			<CircularMenuContainer className={openMenu ? "active" : ""}>
 				{openMenu && (
 					<Circle>
 						<ItemCircle onClick={handlerDarkMode}>
-							{theme ? <MoonIcon /> : <SunIcon />}
+							{theme === "light" ? <MoonIcon /> : <SunIcon />}
 						</ItemCircle>
 
 						<ItemCircle>

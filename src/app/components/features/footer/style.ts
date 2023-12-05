@@ -7,7 +7,6 @@ export const FooterContainer = styled.div`
 	border-radius: 2rem 2rem 0 0;
 	display: flex;
 	width: 100%;
-	/* height: 600px; */
 	justify-content: space-between;
 	align-items: center;
 	color: ${({ theme }) => theme.text};
@@ -29,7 +28,6 @@ export const FooterContainer = styled.div`
 	}
 
 	@media only screen and (max-width: 999px) {
-		/* display: none; */
 		margin-bottom: 8rem;
 		flex-direction: column;
 		gap: 3rem;
@@ -57,7 +55,6 @@ export const MidSide = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	gap: 0.7rem;
-	/* margin-bottom: 1.5rem; */
 
 	svg {
 		font-size: 1.6rem;
@@ -68,7 +65,6 @@ export const Subtitle = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* gap: 0 0.2rem; */
 	gap: 0.3rem;
 	text-align: center;
 

@@ -22,7 +22,6 @@ import { LanguageContext } from "@/app/contexts/languageContext";
 export default function MobileMenu() {
 	const { language } = useContext(LanguageContext) || {};
 	const [itemActive, setItemActive] = useState("Home");
-	const [menuSettings, setMenuSettings] = useState(false);
 	const [openMenu, setOpenMenu] = useState(false);
 
 	const itemActiveStyles: { [key: string]: { transform: string } } = {
