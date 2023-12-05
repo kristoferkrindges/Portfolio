@@ -2,9 +2,17 @@ import React from "react";
 import { BoxOneContainer, Content, Modal, Banner } from "./style";
 import BannerPhoto from "../../../../../assets/images/banner.jpeg";
 
+import { motion } from "framer-motion";
+import { fadeInRightVariant } from "@/app/utils/motion";
+
 export default function BoxOne() {
 	return (
-		<BoxOneContainer>
+		<BoxOneContainer
+			as={motion.div}
+			variants={fadeInRightVariant}
+			initial="hidden"
+			whileInView="visible"
+		>
 			{/* <Content>Hello Theree!!</Content> */}
 			<Modal>
 				<Banner

@@ -19,6 +19,9 @@ export const Section = styled.section`
 	justify-content: center;
 	max-height: 100%;
 	/* margin-bottom: 13rem; */
+	@media only screen and (max-width: 1300px) {
+		margin-top: 4rem;
+	}
 	@media only screen and (max-width: 900px) {
 		margin-bottom: 6rem;
 		margin-top: 4rem;

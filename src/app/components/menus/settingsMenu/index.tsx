@@ -50,7 +50,7 @@ export default function SettingsMenu({
 				</Item>
 			)}
 			<Item onClick={() => handleFilter && handleFilter("yourId")}>
-				<LanguageIcon />
+				{/* <LanguageIcon /> */}
 				<Text>{language === "Portuguese" ? "English" : "Portuguese"}</Text>
 			</Item>
 		</DropMenu>

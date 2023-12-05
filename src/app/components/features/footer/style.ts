@@ -39,6 +39,10 @@ export const FooterContainer = styled.div`
 			gap: 4rem;
 		}
 	}
+
+	@media (max-width: 1300px) {
+		margin-top: 4rem;
+	}
 `;
 
 export const ContextFooter = styled.div`

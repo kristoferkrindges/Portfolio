@@ -23,11 +23,19 @@ import {
 	Title,
 } from "../../menus/topSideMenu/style";
 import { ScrollUp } from "../../buttons/scrollDownAndUp/index.styled";
+import { motion } from "framer-motion";
+import { fadeInBottomVariant } from "@/app/utils/motion";
 
 export default function Footer() {
 	const { language } = useContext(LanguageContext) || {};
 	return (
-		<ContextFooter>
+		<ContextFooter
+			as={motion.div}
+			variants={fadeInBottomVariant}
+			initial="hidden"
+			whileInView="visible"
+			transition={{ type: "tween", duration: 1 }}
+		>
 			<FooterContainer>
 				<RightSideTop className="Icons">
 					<Link href="#">

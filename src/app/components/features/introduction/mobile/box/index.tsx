@@ -15,6 +15,13 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import KristoferPhoto from "../../../../../assets/images/kristofer.png";
 import { MyPicture, Social } from "../../desktop/circle/style";
 import SocialButtons from "@/app/components/buttons/socialButtons";
+import { motion } from "framer-motion";
+import {
+	DesktopFadeInTopVariant,
+	DesktopfadeInRightVariant,
+	DesktopfadeInLeftVariant,
+	DesktopFadeInBottomVariant,
+} from "@/app/utils/motion";
 
 export default function Box() {
 	const { language } = useContext(LanguageContext) || {};
@@ -24,17 +31,40 @@ export default function Box() {
 		loop: 0,
 	});
 	return (
-		<BoxContainer>
+		<BoxContainer
+			as={motion.div}
+			variants={DesktopFadeInBottomVariant}
+			initial="hidden"
+			whileInView="visible"
+		>
 			<Circle>
 				<Photo>
 					<MyPicture src={KristoferPhoto.src} />
-					<Social className="github">
+					<Social
+						className="github"
+						// as={motion.div}
+						// variants={DesktopFadeInTopVariant}
+						// initial="hidden"
+						// whileInView="visible"
+					>
 						<SocialButtons type={"Github"} />
 					</Social>
-					<Social className="linkedin">
+					<Social
+						className="linkedin"
+						// as={motion.div}
+						// variants={DesktopfadeInLeftVariant}
+						// initial="hidden"
+						// whileInView="visible"
+					>
 						<SocialButtons type={"Linkedin"} />
 					</Social>
-					<Social className="gmail">
+					<Social
+						className="gmail"
+						// as={motion.div}
+						// variants={DesktopfadeInRightVariant}
+						// initial="hidden"
+						// whileInView="visible"
+					>
 						<SocialButtons type={"Gmail"} />
 					</Social>
 				</Photo>

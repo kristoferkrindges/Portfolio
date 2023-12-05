@@ -209,7 +209,7 @@ export const HireMe = styled.button`
 	font-weight: 500;
 	transition: all 0.3s ease;
 	&:hover {
-		background: #333;
+		opacity: 0.7;
 	}
 
 	@media only screen and (max-width: 500px) {

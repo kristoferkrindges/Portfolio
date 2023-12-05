@@ -15,7 +15,7 @@ export default function Contact() {
 					? "Vamos trabalhar juntos"
 					: "Let's work together"}
 			</H5>
-			<SeparatorSection style={{ marginBottom: `4rem` }}>
+			<SeparatorSection>
 				<BoxOneContact />
 				<BoxTwoContact />
 			</SeparatorSection>

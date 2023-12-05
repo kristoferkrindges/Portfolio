@@ -13,7 +13,7 @@ export const Card = styled.div`
 		padding: 1rem;
 	}
 	@media only screen and (max-width: 899px) {
-		margin-top: 11rem;
+		margin-top: 12rem;
 	}
 	@media only screen and (max-width: 477px) {
 		margin-top: 9rem;

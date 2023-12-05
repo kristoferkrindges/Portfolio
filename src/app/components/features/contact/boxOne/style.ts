@@ -7,10 +7,13 @@ interface SocialButtonProps
 
 export const BoxOneContactContainer = styled.div`
 	position: relative;
-	transition: 0.5s;
 	width: 80%;
-	height: 100px;
-	transition-delay: 0.5s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 2rem;
+	/* height: 600px; */
 
 	@media only screen and (max-width: 1322px) {
 		width: 85%;
@@ -22,7 +25,7 @@ export const BoxOneContactContainer = styled.div`
 
 export const User = styled.div`
 	position: relative;
-	/* width: 400px; */
+	top: -10px;
 	width: 100%;
 	min-height: 150px;
 	background: ${({ theme }) => theme.secondColor};
@@ -96,21 +99,18 @@ export const Toggle = styled.span`
 	}
 `;
 
-export const Contacts = styled.ul`
+export const Contacts = styled.div`
 	position: relative;
-	top: 30px;
 	width: 100%;
-	height: 0;
-	overflow: hidden;
+	/* overflow: hidden; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	gap: 2rem;
-	transition: 0.5s;
 `;
 
-export const ContactItem = styled.li`
+export const ContactItem = styled.div`
 	padding: 1rem;
 	border-radius: 2rem;
 	background-color: ${({ theme }) => theme.container};
@@ -119,9 +119,9 @@ export const ContactItem = styled.li`
 	gap: 1rem;
 	width: 90%;
 	border-left: 15px solid ${({ theme }) => theme.secondColor};
-	transition: 0.5s;
+	/* transition: 0.5s;
 	opacity: 0;
-	transform: scale(0);
+	transform: scale(0); */
 
 	@media only screen and (max-width: 505px) {
 		width: 100%;

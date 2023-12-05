@@ -13,6 +13,8 @@ import { LanguageContext } from "@/app/contexts/languageContext";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Link from "next/link";
 import { ScrollDown } from "@/app/components/buttons/scrollDownAndUp/index.styled";
+import { motion } from "framer-motion";
+import { fadeInRightVariant } from "@/app/utils/motion";
 
 export default function BoxTwo() {
 	const { language } = useContext(LanguageContext) || {};
@@ -22,7 +24,12 @@ export default function BoxTwo() {
 	});
 	const fileName = "KristoferKrindges_DesenvolvedorDeSoftware";
 	return (
-		<BoxTwoContainer>
+		<BoxTwoContainer
+			as={motion.div}
+			variants={fadeInRightVariant}
+			initial="hidden"
+			whileInView="visible"
+		>
 			<Content>
 				<Pharase>
 					{language === "Portuguese"
