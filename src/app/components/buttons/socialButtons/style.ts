@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface SocialButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	backgroundColor: string;
+	color: string;
 }
 
 export const SocialButton = styled.button<SocialButtonProps>`
@@ -15,7 +15,7 @@ export const SocialButton = styled.button<SocialButtonProps>`
 	height: 2em;
 	cursor: pointer;
 	overflow: hidden;
-	color: ${(prop) => prop.backgroundColor};
+	color: ${(prop) => prop.color};
 	z-index: 1;
 	transition: color 0.2s ease-in-out;
 	background-color: ${({ theme }) => theme.container};
@@ -28,7 +28,7 @@ export const SocialButton = styled.button<SocialButtonProps>`
 		right: 0;
 		bottom: 0;
 		z-index: -1;
-		background-color: ${(prop) => prop.backgroundColor};
+		background-color: ${(prop) => prop.color};
 		transform: scaleY(0);
 		transform-origin: bottom;
 		transition: transform 0.2s ease-in-out;

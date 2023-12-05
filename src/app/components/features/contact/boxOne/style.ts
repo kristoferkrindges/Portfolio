@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface SocialButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	backgroundColor: string;
+	color: string;
 }
 
 export const BoxOneContactContainer = styled.div`
@@ -136,7 +136,7 @@ export const ButtonSocial = styled.button<SocialButtonProps>`
 	color: #fff;
 	z-index: 1;
 	transition: color 0.2s ease-in-out;
-	background-color: ${(prop) => prop.backgroundColor};
+	background-color: ${(prop) => prop.color};
 
 	&::before {
 		content: "";

@@ -69,7 +69,7 @@ export default function BoxOneContact() {
 					whileInView="visible"
 					transition={{ type: "tween", duration: 1 }}
 				>
-					<ButtonSocial backgroundColor={"#c71610"} onClick={handleEmailClick}>
+					<ButtonSocial color={"#c71610"} onClick={handleEmailClick}>
 						<GmailIcon />
 					</ButtonSocial>
 					<HiperLink>kristoferkrindges@gmail.com</HiperLink>
@@ -84,7 +84,7 @@ export default function BoxOneContact() {
 					transition={{ type: "tween", duration: 1.2 }}
 				>
 					<Link href="https://www.linkedin.com/in/kristoferkrindgesprofile/">
-						<ButtonSocial backgroundColor={"#2464AE"}>
+						<ButtonSocial color={"#2464AE"}>
 							<LinkedinIcon />
 						</ButtonSocial>
 					</Link>
@@ -100,7 +100,7 @@ export default function BoxOneContact() {
 					transition={{ type: "tween", duration: 1.5 }}
 				>
 					<Link href="https://github.com/kristoferkrindges">
-						<ButtonSocial backgroundColor={"#171616"}>
+						<ButtonSocial color={"#171616"}>
 							<GithubIcon />
 						</ButtonSocial>
 					</Link>

@@ -40,7 +40,6 @@ export default function CircularMenu({
 		alterDarkMode?.();
 		handlerCircle(evt);
 	};
-	console.log(theme);
 	return (
 		<CircularContainer>
 			<CircularMenuContainer className={openMenu ? "active" : ""}>

@@ -59,37 +59,37 @@ export default function Card({
 				<Phrase>{phrase}</Phrase>
 				<Icons>
 					{technologies.includes("react") && (
-						<SocialButton backgroundColor={`#149eca`}>
+						<SocialButton color={`#149eca`}>
 							<ReactIcon />
 						</SocialButton>
 					)}
 					{technologies.includes("java") && (
-						<SocialButton backgroundColor={`#dc5946`}>
+						<SocialButton color={`#dc5946`}>
 							<JavaIcon />
 						</SocialButton>
 					)}
 					{technologies.includes("node") && (
-						<SocialButton backgroundColor={`#026e00`}>
+						<SocialButton color={`#026e00`}>
 							<NodeIcon />
 						</SocialButton>
 					)}
 					{technologies.includes("c#") && (
-						<SocialButton backgroundColor={`#6c287d`}>
+						<SocialButton color={`#6c287d`}>
 							<DotNetIcon />
 						</SocialButton>
 					)}
 					{technologies.includes("mongodb") && (
-						<SocialButton backgroundColor={`#12a54f`}>
+						<SocialButton color={`#12a54f`}>
 							<MongoIcon />
 						</SocialButton>
 					)}
 					{technologies.includes("postgre") && (
-						<SocialButton backgroundColor={`#31648c`}>
+						<SocialButton color={`#31648c`}>
 							<PostgreIcon />
 						</SocialButton>
 					)}
 					{technologies.includes("firebase") && (
-						<SocialButton backgroundColor={`#f48b16`}>
+						<SocialButton color={`#f48b16`}>
 							<FirebaseIcon />
 						</SocialButton>
 					)}
@@ -97,12 +97,12 @@ export default function Card({
 			</Content>
 			<Social>
 				<Link href={git}>
-					<SocialButton backgroundColor={`#000`}>
+					<SocialButton color={`#000`}>
 						<GithubIcon />
 					</SocialButton>
 				</Link>
 				<Link href={link}>
-					<SocialButton backgroundColor={`#000`}>
+					<SocialButton color={`#000`}>
 						<ChromeIcon />
 					</SocialButton>
 				</Link>
