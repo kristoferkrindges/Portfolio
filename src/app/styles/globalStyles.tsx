@@ -21,7 +21,6 @@ export const GlobalStyle = createGlobalStyle`
         color: ${({ theme }) => theme.text};
         font-family: 'Inter', sans-serif;
         overflow-x: hidden;
-        /* overflow: hidden; */
     }
     ul, li {
          list-style: none;

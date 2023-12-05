@@ -47,28 +47,4 @@ export const Indicator = styled.div`
 	border-radius: 50%;
 	border: 6px solid ${({ theme }) => theme.background};
 	transition: 0.5s;
-
-	/* &::before {
-		content: "";
-		position: absolute;
-		top: 50%;
-		left: -22px;
-		width: 20px;
-		height: 20px;
-		background-color: transparent;
-		border-top-right-radius: 20px;
-		box-shadow: 0px -10px 0 0 ${({ theme }) => theme.background};
-	}
-
-	&::after {
-		content: "";
-		position: absolute;
-		top: 50%;
-		right: -22px;
-		width: 20px;
-		height: 20px;
-		background-color: transparent;
-		border-top-left-radius: 20px;
-		box-shadow: 0px -10px 0 0 ${({ theme }) => theme.background};
-	} */
 `;

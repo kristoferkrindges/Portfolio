@@ -22,7 +22,6 @@ export const CardContainer = styled.div`
 
 export const ContextContainer = styled.div`
 	position: relative;
-	/* width: 400px; */
 	width: 100%;
 	min-height: 150px;
 	background: ${({ theme }) => theme.secondColor};
@@ -73,7 +72,6 @@ export const Toggle = styled.span`
 	position: absolute;
 	bottom: 0;
 	right: 2rem;
-	/* width: 120px; */
 	padding: 1rem;
 	background: ${({ theme }) => theme.textInverse};
 	border-radius: 30px;

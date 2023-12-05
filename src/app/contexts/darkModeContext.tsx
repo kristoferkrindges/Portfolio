@@ -4,16 +4,14 @@ import useDarkMode from "../hooks/darkModeHook";
 interface DarkModeContextProps {
 	alterDarkMode: () => void;
 }
+
 const DarkModeContext = React.createContext<DarkModeContextProps | null>(null);
 
 function DarkModeProvider({ children }: { children: React.ReactNode }) {
-	const { alterDarkMode } = useDarkMode();
+	const contextValue: DarkModeContextProps | null = useDarkMode();
+
 	return (
-		<DarkModeContext.Provider
-			value={{
-				alterDarkMode,
-			}}
-		>
+		<DarkModeContext.Provider value={contextValue}>
 			{children}
 		</DarkModeContext.Provider>
 	);

@@ -13,7 +13,6 @@ export default function BoxOne() {
 			initial="hidden"
 			whileInView="visible"
 		>
-			{/* <Content>Hello Theree!!</Content> */}
 			<Modal>
 				<Banner
 					src={

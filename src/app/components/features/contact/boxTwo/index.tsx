@@ -194,4 +194,3 @@ export default function BoxTwoContact() {
 		</BoxTwoContactContainer>
 	);
 }
-// style={{ top: `2.5rem`, padding: `0.6rem 7rem` }}

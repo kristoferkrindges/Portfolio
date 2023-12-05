@@ -8,7 +8,6 @@ import {
 	Content,
 	Name,
 	Span,
-	Toggle,
 	Contacts,
 	ContactItem,
 	ButtonSocial,

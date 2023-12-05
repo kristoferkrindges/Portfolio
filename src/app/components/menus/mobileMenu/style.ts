@@ -3,10 +3,8 @@ import styled from "styled-components";
 export const NavigationMobile = styled.div`
 	position: fixed;
 	bottom: 0;
-	/* right: 0; */
 	background: ${({ theme }) => theme.container};
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
-	/* padding: 1rem; */
 	border-radius: 2rem 2rem 0 0;
 	width: 100%;
 	height: 70px;
@@ -27,7 +25,6 @@ export const List = styled.ul`
 export const Item = styled.li`
 	position: relative;
 	list-style: none;
-	/* z-index: 15; */
 	width: 70px;
 	height: 70px;
 
@@ -55,7 +52,6 @@ export const Item = styled.li`
 
 	&.active .newItem .icon {
 		transform: translateY(-42px) rotate(225deg) translateX(-4px);
-		/* transform: rotate(225deg); */
 	}
 
 	&.active .newItem .text {
@@ -85,11 +81,6 @@ export const Icon = styled.span`
 	font-size: 1.5em;
 	text-align: center;
 	transition: 0.5s;
-	/* z-index: 17;
-
-	& svg {
-		z-index: 17;
-	} */
 `;
 
 export const Legend = styled.span`
@@ -101,44 +92,6 @@ export const Legend = styled.span`
 	opacity: 0;
 	transform: translateY(20px);
 `;
-
-// export const Indicator = styled.div`
-// 	position: absolute;
-// 	top: -50%;
-// 	width: 70px;
-// 	height: 70px;
-// 	background: ${({ theme }) => theme.secondColor};
-// 	border-radius: 50%;
-// 	z-index: 14;
-// 	border: 6px solid ${({ theme }) => theme.background};
-// 	transition: 0.5s;
-
-// 	&::before {
-// 		content: "";
-// 		position: absolute;
-// 		top: 50%;
-// 		left: -22px;
-// 		width: 20px;
-// 		height: 20px;
-// 		background-color: transparent;
-// 		border-top-right-radius: 20px;
-// 		box-shadow: 0px -10px 0 0 ${({ theme }) => theme.background};
-// 		z-index: 0;
-// 	}
-
-// 	&::after {
-// 		content: "";
-// 		position: absolute;
-// 		top: 50%;
-// 		right: -22px;
-// 		width: 20px;
-// 		height: 20px;
-// 		background-color: transparent;
-// 		border-top-left-radius: 20px;
-// 		box-shadow: 0px -10px 0 0 ${({ theme }) => theme.background};
-// 		z-index: 0;
-// 	}
-// `;
 
 export const Indicator = styled.div`
 	position: absolute;

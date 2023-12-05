@@ -5,7 +5,6 @@ export const BoxOneContainer = styled.div`
 	width: 100%;
 	height: 400px;
 	background-color: ${({ theme }) => theme.secondColor};
-	/* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); */
 	border-radius: 2rem;
 	animation: progress 2s ease-in-out forwards;
 	&::before {
@@ -23,8 +22,6 @@ export const BoxOneContainer = styled.div`
 	&::after {
 		content: "";
 		position: absolute;
-		/* bottom: -6px;
-		left: 82px; */
 		bottom: -6px;
 		left: 248px;
 		width: 23px;
@@ -99,7 +96,6 @@ export const Banner = styled.img`
 export const Content = styled.div`
 	display: flex;
 	align-items: center;
-	/* justify-content: center; */
 	color: white;
 	padding: 1rem;
 `;

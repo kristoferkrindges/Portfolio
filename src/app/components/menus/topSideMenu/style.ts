@@ -32,16 +32,13 @@ export const LeftSideTop = styled.div`
 	}
 `;
 
-export const MidSideTop = styled.div`
-	/* width: 100%; */
-`;
+export const MidSideTop = styled.div``;
 
 export const RightSideTop = styled.div`
 	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 1.5rem;
-	/* width: 100%; */
 `;
 
 export const Title = styled.h1`

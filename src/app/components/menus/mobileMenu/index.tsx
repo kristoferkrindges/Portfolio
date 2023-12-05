@@ -1,3 +1,4 @@
+import React, { useEffect, useState, useRef, useContext } from "react";
 import Link from "next/link";
 import {
 	NavigationMobile,
@@ -10,25 +11,18 @@ import {
 } from "./style";
 import {
 	AboutIcon,
-	ContactIcon,
 	HomeIcon,
-	LanguageIcon,
-	MoonIcon,
 	ProjectsIcon,
 	SettingsIcon,
-	SunIcon,
 } from "../../icons/iO5Icons.styled";
-import { useContext, useEffect, useRef, useState } from "react";
-import SettingsMenu from "../settingsMenu";
-import { LanguageContext } from "@/app/contexts/languageContext";
 import { PlusIcon } from "../../icons/fAIcons.styled";
 import CircularMenu from "./circularMenu";
+import { LanguageContext } from "@/app/contexts/languageContext";
 
 export default function MobileMenu() {
-	const [itemActive, setItemActive] = useState("Home");
-	const [menuSettings, setMenuSettings] = useState(false);
-	const [openMenu, setOpenMenu] = useState(false);
 	const { language } = useContext(LanguageContext) || {};
+	const [itemActive, setItemActive] = useState("Home");
+	const [openMenu, setOpenMenu] = useState(false);
 
 	const itemActiveStyles: { [key: string]: { transform: string } } = {
 		Home: { transform: `translateX(calc(70px*0))` },
@@ -41,15 +35,39 @@ export default function MobileMenu() {
 	const menuRef = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
+		const handleScroll = () => {
+			const scrollPosition = window.scrollY;
+			const sections = document.querySelectorAll("section");
+
+			sections.forEach((section) => {
+				const { top, bottom } = section.getBoundingClientRect();
+
+				if (
+					section.id === "Contact" &&
+					top <= window.innerHeight / 2 &&
+					bottom >= window.innerHeight / 2
+				) {
+					setItemActive("Plus");
+				} else if (
+					top <= window.innerHeight / 2 &&
+					bottom >= window.innerHeight / 2
+				) {
+					setItemActive(section.id);
+				}
+			});
+		};
+
 		const handleClickOutside = (event: MouseEvent) => {
 			if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
 				setOpenMenu(false);
 			}
 		};
 
+		document.addEventListener("scroll", handleScroll);
 		document.addEventListener("click", handleClickOutside);
 
 		return () => {
+			document.removeEventListener("scroll", handleScroll);
 			document.removeEventListener("click", handleClickOutside);
 		};
 	}, []);
@@ -57,11 +75,10 @@ export default function MobileMenu() {
 	const handlerMenu = () => {
 		setItemActive("Plus");
 		handlerCircle();
-		// setMenuSettings(menuSettings ? false : true);
 	};
 
 	const handlerCircle = () => {
-		setOpenMenu(openMenu ? false : true);
+		setOpenMenu((prevOpenMenu) => !prevOpenMenu);
 	};
 
 	return (
@@ -99,9 +116,8 @@ export default function MobileMenu() {
 						</Legend>
 					</Link>
 				</Item>
-				{/* <CircularMenu ref={menuRef} openMenu={openMenu} /> */}
 				<Item
-					ref={menuRef}
+					ref={menuRef as React.MutableRefObject<HTMLLIElement | null>}
 					className={itemActive === "Plus" ? "active" : "drop"}
 				>
 					<CircularMenu openMenu={openMenu} handlerCircle={handlerCircle} />
@@ -150,32 +166,6 @@ export default function MobileMenu() {
 						</Legend>
 					</Link>
 				</Item>
-				{/* <Item
-					className={itemActive === "Contact" ? "active" : "drop"}
-					onClick={() => setItemActive("Contact")}
-				>
-					<Link href="#Contact">
-						<Icon
-							className="icon"
-							style={itemActive === "Contact" ? { color: "white" } : {}}
-						>
-							<ContactIcon />
-						</Icon>
-						<Legend className="text">
-							{language === "Portuguese" ? "Contato" : "Contact"}
-						</Legend>
-					</Link>
-				</Item> */}
-
-				{/* <Item onClick={handlerMenu}>
-					{menuSettings && <SettingsMenu handlerMenu={handlerMenu} />}
-					<Link href="#">
-						<Icon className="icon">
-							<SettingsIcon />
-						</Icon>
-						<Legend className="text">DarkMode</Legend>
-					</Link>
-				</Item> */}
 				<Indicator style={itemActiveStyles[itemActive]} />
 			</List>
 		</NavigationMobile>

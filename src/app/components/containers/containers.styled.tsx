@@ -1,15 +1,5 @@
 import styled from "styled-components";
 
-// export const Section = styled.section`
-// 	position: relative;
-// 	width: 100%;
-// 	margin-top: 7rem;
-// 	/* margin-bottom: 13rem; */
-// 	@media only screen and (max-width: 900px) {
-// 		margin-bottom: 8rem;
-// 	}
-// `;
-
 export const Section = styled.section`
 	position: relative;
 	width: 100%;

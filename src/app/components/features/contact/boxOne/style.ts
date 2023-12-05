@@ -13,7 +13,6 @@ export const BoxOneContactContainer = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	gap: 2rem;
-	/* height: 600px; */
 
 	@media only screen and (max-width: 1322px) {
 		width: 85%;
@@ -102,7 +101,6 @@ export const Toggle = styled.span`
 export const Contacts = styled.div`
 	position: relative;
 	width: 100%;
-	/* overflow: hidden; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -119,9 +117,6 @@ export const ContactItem = styled.div`
 	gap: 1rem;
 	width: 90%;
 	border-left: 15px solid ${({ theme }) => theme.secondColor};
-	/* transition: 0.5s;
-	opacity: 0;
-	transform: scale(0); */
 
 	@media only screen and (max-width: 505px) {
 		width: 100%;
@@ -155,11 +150,6 @@ export const ButtonSocial = styled.button<SocialButtonProps>`
 		transform: scaleY(0);
 		transform-origin: bottom;
 		transition: transform 0.2s ease-in-out;
-	}
-
-	&:hover,
-	&:focus {
-		/* color: black; */
 	}
 
 	&:hover::before,
