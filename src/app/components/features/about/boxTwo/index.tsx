@@ -19,14 +19,24 @@ import { GmailIcon } from "@/app/components/icons/sIIcons.styled";
 import KristoferPhoto from "../../../../assets/images/kristofer.png";
 import Link from "next/link";
 import { LanguageContext } from "@/app/contexts/languageContext";
+import { motion } from "framer-motion";
+import { fadeInRightVariant, fadeInLeftVariant } from "@/app/utils/motion";
+import { useMediaQuery } from "react-responsive";
 
 export default function BoxTwoAbout() {
 	const { language } = useContext(LanguageContext) || {};
+	const isSmallScreen = useMediaQuery({ query: "(max-width: 999px)" });
+	const fileName = "KristoferKrindges_DesenvolvedorDeSoftware";
 	const handleEmailClick = () => {
 		window.location.href = `mailto:kristoferkrindges@gmail.com`;
 	};
 	return (
-		<BoxTwoContainer>
+		<BoxTwoContainer
+			as={motion.div}
+			variants={isSmallScreen ? fadeInLeftVariant : fadeInRightVariant}
+			initial="hidden"
+			whileInView="visible"
+		>
 			<CardContent>
 				<Photo>
 					<Logo src={KristoferPhoto.src} />
@@ -49,7 +59,13 @@ export default function BoxTwoAbout() {
 					</Subject>
 				</NameSubject>
 				<Buttons>
-					<HireMe>Download CV</HireMe>
+					<Link
+						href="/pdf/KristoferKrindgesDesenvolvedorDeSoftware.pdf"
+						target="_blank"
+						download={fileName}
+					>
+						<HireMe>Download CV</HireMe>
+					</Link>
 				</Buttons>
 			</CardContent>
 		</BoxTwoContainer>

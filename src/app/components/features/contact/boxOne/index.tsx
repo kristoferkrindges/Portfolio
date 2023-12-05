@@ -21,9 +21,17 @@ import {
 	LinkedinIcon,
 } from "@/app/components/icons/fAIcons.styled";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+	fadeInTopVariant,
+	contactFadeInLeftVariant,
+	fadeInLeftVariant,
+} from "@/app/utils/motion";
+import { useMediaQuery } from "react-responsive";
 
 export default function BoxOneContact() {
 	const { language } = useContext(LanguageContext) || {};
+	const isSmallScreen = useMediaQuery({ query: "(max-width: 550px)" });
 
 	const [contacts, setContacts] = useState(true);
 
@@ -32,14 +40,14 @@ export default function BoxOneContact() {
 	};
 
 	return (
-		<BoxOneContactContainer
-			style={
-				contacts
-					? { height: `560px`, transitionDelay: `0.5s` }
-					: { height: `100px`, marginBottom: `5rem` }
-			}
-		>
-			<User>
+		<BoxOneContactContainer>
+			<User
+				as={motion.div}
+				variants={fadeInTopVariant}
+				initial="hidden"
+				whileInView="visible"
+				transition={{ type: "tween", duration: 1 }}
+			>
 				<ImgBox>
 					<Photo src={KristoferPhoto.src} />
 				</ImgBox>
@@ -51,30 +59,16 @@ export default function BoxOneContact() {
 							: "Software Developer"}
 					</Span>
 				</Content>
-				{/* <Toggle
-					onClick={() => setContacts(contacts ? false : true)}
-					style={contacts ? { backgroundColor: `red` } : {}}
-				>
-					{contacts
-						? language === "Portuguese"
-							? "Fechar"
-							: "Close"
-						: language === "Portuguese"
-						? "Abrir"
-						: "Open"}
-				</Toggle> */}
 			</User>
-			<Contacts style={contacts ? { height: `400px` } : {}}>
+			<Contacts>
 				<ContactItem
-					style={
-						contacts
-							? {
-									opacity: 1,
-									transform: `scale(1)`,
-									transitionDelay: `calc(0.25s * 0)`,
-							  }
-							: {}
+					as={motion.div}
+					variants={
+						isSmallScreen ? fadeInLeftVariant : contactFadeInLeftVariant
 					}
+					initial="hidden"
+					whileInView="visible"
+					transition={{ type: "tween", duration: 1 }}
 				>
 					<ButtonSocial backgroundColor={"#c71610"} onClick={handleEmailClick}>
 						<GmailIcon />
@@ -82,15 +76,13 @@ export default function BoxOneContact() {
 					<HiperLink>kristoferkrindges@gmail.com</HiperLink>
 				</ContactItem>
 				<ContactItem
-					style={
-						contacts
-							? {
-									opacity: 1,
-									transform: `scale(1)`,
-									transitionDelay: `calc(0.25s * 1)`,
-							  }
-							: {}
+					as={motion.div}
+					variants={
+						isSmallScreen ? fadeInLeftVariant : contactFadeInLeftVariant
 					}
+					initial="hidden"
+					whileInView="visible"
+					transition={{ type: "tween", duration: 1.2 }}
 				>
 					<Link href="https://www.linkedin.com/in/kristoferkrindgesprofile/">
 						<ButtonSocial backgroundColor={"#2464AE"}>
@@ -100,15 +92,13 @@ export default function BoxOneContact() {
 					<HiperLink>linkedin.com/kristoferkrindgesprofile</HiperLink>
 				</ContactItem>
 				<ContactItem
-					style={
-						contacts
-							? {
-									opacity: 1,
-									transform: `scale(1)`,
-									transitionDelay: `calc(0.25s * 2)`,
-							  }
-							: {}
+					as={motion.div}
+					variants={
+						isSmallScreen ? fadeInLeftVariant : contactFadeInLeftVariant
 					}
+					initial="hidden"
+					whileInView="visible"
+					transition={{ type: "tween", duration: 1.5 }}
 				>
 					<Link href="https://github.com/kristoferkrindges">
 						<ButtonSocial backgroundColor={"#171616"}>

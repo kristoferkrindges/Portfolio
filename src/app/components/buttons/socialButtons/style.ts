@@ -36,7 +36,7 @@ export const SocialButton = styled.button<SocialButtonProps>`
 
 	&:hover,
 	&:focus {
-		color: #fff;
+		color: ${({ theme }) => theme.textInverse};
 	}
 
 	&:hover::before,
@@ -44,10 +44,22 @@ export const SocialButton = styled.button<SocialButtonProps>`
 		transform: scaleY(1);
 	}
 
-	@media only screen and (max-width: 1000px) {
+	@media only screen and (max-width: 1700px) {
 		width: 1.8em;
 		height: 1.8em;
 		font-size: 1.8em;
+	}
+
+	@media only screen and (max-width: 1488px) {
+		width: 1.7em;
+		height: 1.7em;
+		font-size: 1.7em;
+	}
+
+	@media only screen and (max-width: 1000px) {
+		width: 1.74em;
+		height: 1.74em;
+		font-size: 1.74em;
 	}
 
 	@media only screen and (max-width: 440px) {

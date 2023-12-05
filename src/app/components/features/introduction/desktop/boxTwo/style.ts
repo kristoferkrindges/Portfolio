@@ -32,6 +32,42 @@ export const BoxTwoContainer = styled.div`
 		border-top-left-radius: 20px;
 		box-shadow: -6px -6px ${({ theme }) => theme.background};
 	}
+
+	@media only screen and (max-width: 1700px) {
+		&::before {
+			bottom: 125px;
+			left: -1px;
+		}
+
+		&::after {
+			top: -1px;
+			left: 195px;
+		}
+	}
+
+	@media only screen and (max-width: 1488px) {
+		&::before {
+			bottom: 160px;
+			left: -1px;
+		}
+
+		&::after {
+			top: -1px;
+			left: 142px;
+		}
+	}
+
+	@media only screen and (max-width: 1400px) {
+		&::before {
+			bottom: 168px;
+			left: -1px;
+		}
+
+		&::after {
+			top: -1px;
+			left: 192px;
+		}
+	}
 `;
 
 export const Content = styled.div`
@@ -92,6 +128,10 @@ export const Button = styled.button`
 		opacity: 0.8;
 		letter-spacing: 0.5em;
 	}
+
+	@media only screen and (max-width: 1468px) {
+		top: 140px;
+	}
 `;
 
 export const Pharase = styled.span`
@@ -104,6 +144,20 @@ export const Pharase = styled.span`
 
 	@media only screen and (max-width: 1700px) {
 		font-size: 1rem;
+	}
+
+	@media only screen and (max-width: 1230px) {
+		font-size: 0.8rem;
+	}
+
+	@media only screen and (max-width: 1160px) {
+		font-size: 0.7rem;
+		margin-left: 1.5rem;
+	}
+
+	@media only screen and (max-width: 1100px) {
+		font-size: 0.6rem;
+		margin-left: 1.6rem;
 	}
 `;
 
@@ -121,6 +175,10 @@ export const Name = styled.span`
 
 	@media only screen and (max-width: 1468px) {
 		font-size: 0.9rem;
+	}
+
+	@media only screen and (max-width: 1160px) {
+		font-size: 0.8rem;
 	}
 `;
 
@@ -149,5 +207,23 @@ export const List = styled.li`
 	span {
 		font-size: 1.65em;
 		color: ${({ theme }) => theme.text};
+	}
+
+	@media only screen and (max-width: 1468px) {
+		font-size: 1rem;
+	}
+
+	@media only screen and (max-width: 1100px) {
+		font-size: 0.9rem;
+	}
+`;
+
+export const ButtonScroll = styled.div`
+	position: absolute;
+	right: -8%;
+	top: 35%;
+
+	@media only screen and (max-width: 1165px) {
+		right: -10%;
 	}
 `;

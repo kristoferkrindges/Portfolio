@@ -23,10 +23,34 @@ import {
 	MongoIcon,
 	PostgreIcon,
 } from "@/app/components/icons/sIIcons.styled";
+import { motion } from "framer-motion";
+import { fadeInBottomVariant } from "@/app/utils/motion";
 
-export default function Card({ photo, name, phrase, git, link, technologies }) {
+interface CardProps {
+	photo: string;
+	name: string;
+	phrase: string;
+	git: string;
+	link: string;
+	technologies: string[];
+}
+
+export default function Card({
+	photo,
+	name,
+	phrase,
+	git,
+	link,
+	technologies,
+}: CardProps) {
 	return (
-		<CardContainer>
+		<CardContainer
+			as={motion.div}
+			variants={fadeInBottomVariant}
+			initial="hidden"
+			whileInView="visible"
+			transition={{ type: "tween", duration: 1 }}
+		>
 			<ImageBox className="imgBx">
 				<ImageProject src={photo} />
 			</ImageBox>

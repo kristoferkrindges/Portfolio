@@ -8,6 +8,7 @@ export const BoxTwoContainer = styled.div`
 	box-shadow: 0 5px 40px rgba(0, 0, 0, 0.6);
 	transition: opacity 0.5s ease-out;
 	width: 100%;
+	height: 100%;
 	&::before {
 		content: "";
 		position: absolute;
@@ -15,6 +16,33 @@ export const BoxTwoContainer = styled.div`
 		width: 96.5%;
 		background: ${({ theme }) => theme.secondColor};
 		border-radius: 2rem;
+	}
+
+	@media only screen and (max-width: 1600px) {
+		&::before {
+			width: 95%;
+		}
+	}
+
+	@media only screen and (max-width: 1473px) {
+		height: 600px;
+		&::before {
+			width: 94%;
+		}
+	}
+
+	@media only screen and (max-width: 1324px) {
+		height: 670px;
+		&::before {
+			width: 94%;
+		}
+	}
+
+	@media only screen and (max-width: 1300px) {
+		height: 100%;
+		&::before {
+			width: 96%;
+		}
 	}
 
 	@media only screen and (max-width: 720px) {
@@ -25,13 +53,19 @@ export const BoxTwoContainer = styled.div`
 
 	@media only screen and (max-width: 537px) {
 		&::before {
-			width: 93%;
+			width: 94%;
 		}
 	}
 
 	@media only screen and (max-width: 500px) {
 		&::before {
-			width: 90%;
+			width: 93%;
+		}
+	}
+
+	@media only screen and (max-width: 360px) {
+		&::before {
+			width: 91%;
 		}
 	}
 `;
@@ -44,6 +78,7 @@ export const CardContent = styled.div`
 	position: relative;
 	z-index: 100;
 	width: 100%;
+	height: 100%;
 `;
 export const Icons = styled.div`
 	position: absolute;
@@ -73,6 +108,14 @@ export const Icons = styled.div`
 		svg {
 			font-size: 1.2rem;
 		}
+	}
+
+	@media only screen and (max-width: 430px) {
+		gap: 1rem;
+		svg {
+			font-size: 1rem;
+		}
+		right: 15px;
 	}
 `;
 export const NameSubject = styled.div`
@@ -166,7 +209,7 @@ export const HireMe = styled.button`
 	font-weight: 500;
 	transition: all 0.3s ease;
 	&:hover {
-		background: #333;
+		opacity: 0.7;
 	}
 
 	@media only screen and (max-width: 500px) {

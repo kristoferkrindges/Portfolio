@@ -1,10 +1,25 @@
 import styled from "styled-components";
 
-export const BoxContainer = styled.section`
-	margin-top: 2rem;
+export const DesktopContainer = styled.section`
+	width: 100%;
+`;
+
+export const BoxContainer = styled.div`
 	display: flex;
+	width: 100%;
+	margin-top: 3rem;
 	justify-content: end;
-	@media only screen and (max-width: 1478px) {
+
+	@media only screen and (max-width: 1539px) {
+		margin-bottom: 4rem;
+		margin-top: 2rem;
+	}
+
+	@media only screen and (max-width: 1509px) {
+		margin-top: 2rem;
+		margin-bottom: 5rem;
+	}
+	@media only screen and (max-width: 999px) {
 		display: none;
 	}
 `;
@@ -17,9 +32,5 @@ export const Card = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	margin-bottom: 3.7rem;
-
-	@media only screen and (max-width: 1200px) {
-		display: none;
-	}
+	/* margin-bottom: 3.7rem; */
 `;

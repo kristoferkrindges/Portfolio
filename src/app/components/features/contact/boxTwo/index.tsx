@@ -24,6 +24,9 @@ import {
 import { ApiEmailContext } from "@/app/contexts/apiEmailContext";
 import { TailSpin } from "react-loader-spinner";
 import sendEmail from "@/app/api/email/send/apiEmail";
+import { motion } from "framer-motion";
+import { fadeInRightVariant, fadeInLeftVariant } from "@/app/utils/motion";
+import { useMediaQuery } from "react-responsive";
 
 interface CustomInputProps {
 	type: "name" | "email";
@@ -36,6 +39,7 @@ interface CustomInputProps {
 export default function BoxTwoContact() {
 	const { language } = useContext(LanguageContext) || {};
 	const { getEmail } = useContext(ApiEmailContext) || {};
+	const isSmallScreen = useMediaQuery({ query: "(max-width: 999px)" });
 
 	const [nameChange, setNameChange] = useState<string | undefined>(undefined);
 	const [emailChange, setEmailChange] = useState<string | undefined>(undefined);
@@ -103,7 +107,12 @@ export default function BoxTwoContact() {
 	};
 
 	return (
-		<BoxTwoContactContainer>
+		<BoxTwoContactContainer
+			as={motion.div}
+			variants={isSmallScreen ? fadeInLeftVariant : fadeInRightVariant}
+			initial="hidden"
+			whileInView="visible"
+		>
 			<Top>
 				<Title>{language === "Portuguese" ? "Contato" : "Contact"}</Title>
 				<ContactIcon />

@@ -38,12 +38,12 @@ export const CardContainer = styled.div`
 		top: 110px;
 	}
 
-	@media only screen and (max-width: 1629px) {
+	@media only screen and (max-width: 1838px) {
 		width: 48%;
 	}
 
-	@media only screen and (max-width: 900px) {
-		width: 100%;
+	@media only screen and (max-width: 939px) {
+		width: 90%;
 	}
 `;
 
@@ -101,6 +101,15 @@ export const Social = styled.div`
 	margin-top: 1.3rem;
 	justify-content: center;
 	font-size: 0.7rem;
+
+	svg {
+		color: ${({ theme }) => theme.text};
+	}
+
+	@media only screen and (max-width: 370px) {
+		font-size: 0.8rem;
+		bottom: 3%;
+	}
 `;
 
 export const Icons = styled.div`

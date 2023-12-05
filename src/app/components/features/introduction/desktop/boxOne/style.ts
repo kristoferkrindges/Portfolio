@@ -7,7 +7,7 @@ export const BoxOneContainer = styled.div`
 	background-color: ${({ theme }) => theme.secondColor};
 	/* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); */
 	border-radius: 2rem;
-
+	animation: progress 2s ease-in-out forwards;
 	&::before {
 		content: "";
 		position: absolute;
@@ -33,6 +33,52 @@ export const BoxOneContainer = styled.div`
 		z-index: 10;
 		border-bottom-left-radius: 20px;
 		box-shadow: -6px 6px ${({ theme }) => theme.background};
+	}
+
+	@media only screen and (max-width: 1700px) {
+		&::before {
+			top: 125px;
+			left: -1px;
+		}
+
+		&::after {
+			bottom: -6px;
+			left: 198px;
+		}
+	}
+
+	@media only screen and (max-width: 1488px) {
+		&::before {
+			top: 160px;
+			left: -1px;
+		}
+
+		&::after {
+			bottom: -6px;
+			left: 148px;
+		}
+	}
+
+	@media only screen and (max-width: 1400px) {
+		&::before {
+			top: 168px;
+			left: -1px;
+		}
+
+		&::after {
+			bottom: -6px;
+			left: 199px;
+		}
+	}
+
+	@keyframes progress {
+		0% {
+			width: 0;
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
 `;
 

@@ -7,10 +7,14 @@ import {
 	Pharase,
 	Lists,
 	List,
+	ButtonScroll,
 } from "./style";
 import { LanguageContext } from "@/app/contexts/languageContext";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Link from "next/link";
+import { ScrollDown } from "@/app/components/buttons/scrollDownAndUp/index.styled";
+import { motion } from "framer-motion";
+import { fadeInRightVariant } from "@/app/utils/motion";
 
 export default function BoxTwo() {
 	const { language } = useContext(LanguageContext) || {};
@@ -20,7 +24,12 @@ export default function BoxTwo() {
 	});
 	const fileName = "KristoferKrindges_DesenvolvedorDeSoftware";
 	return (
-		<BoxTwoContainer>
+		<BoxTwoContainer
+			as={motion.div}
+			variants={fadeInRightVariant}
+			initial="hidden"
+			whileInView="visible"
+		>
 			<Content>
 				<Pharase>
 					{language === "Portuguese"
@@ -31,12 +40,18 @@ export default function BoxTwo() {
 				<Pharase>
 					{language === "Portuguese" ? "Eu sou um desenvolvedor" : "I am a"}{" "}
 				</Pharase>
-				<Pharase style={{ fontSize: "2rem" }}>
-					<Name style={{ fontSize: "2rem" }}>
+				<Pharase>
+					<Name>
 						{text}
 						<Cursor /> {language === "English" && "Developer"}
 					</Name>
 				</Pharase>
+				<ButtonScroll>
+					<Link href="#About">
+						<ScrollDown />
+					</Link>
+				</ButtonScroll>
+
 				<Lists>
 					<List>
 						{language === "Portuguese" ? "Projetos" : "Projects"}

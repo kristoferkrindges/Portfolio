@@ -79,7 +79,7 @@ export default function Projects() {
 	];
 
 	return (
-		<ProjectSection>
+		<ProjectSection id="Projects" style={{ minHeight: `125vh` }}>
 			<H2>{language === "Portuguese" ? "Projetos" : "Projects"}</H2>
 			<H5>{language === "Portuguese" ? "Meus Projetos" : "My Projects"}</H5>
 			<Cards>

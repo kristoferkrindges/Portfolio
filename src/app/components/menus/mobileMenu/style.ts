@@ -12,7 +12,7 @@ export const NavigationMobile = styled.div`
 	height: 70px;
 	display: none;
 	z-index: 999;
-	@media only screen and (max-width: 900px) {
+	@media only screen and (max-width: 999px) {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -27,7 +27,7 @@ export const List = styled.ul`
 export const Item = styled.li`
 	position: relative;
 	list-style: none;
-	z-index: 1;
+	/* z-index: 15; */
 	width: 70px;
 	height: 70px;
 
@@ -41,6 +41,7 @@ export const Item = styled.li`
 		width: 100%;
 		font-weight: 500;
 		color: ${({ theme }) => theme.text};
+		z-index: 40;
 	}
 
 	&.active a .icon {
@@ -51,6 +52,30 @@ export const Item = styled.li`
 		opacity: 1;
 		transform: translateY(10px);
 	}
+
+	&.active .newItem .icon {
+		transform: translateY(-42px) rotate(225deg) translateX(-4px);
+		/* transform: rotate(225deg); */
+	}
+
+	&.active .newItem .text {
+		opacity: 1;
+		transform: translateY(10px);
+	}
+`;
+
+export const NewItem = styled.div`
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	width: 100%;
+	font-weight: 500;
+	cursor: pointer;
+	color: ${({ theme }) => theme.text};
+	z-index: 40;
 `;
 
 export const Icon = styled.span`
@@ -60,6 +85,11 @@ export const Icon = styled.span`
 	font-size: 1.5em;
 	text-align: center;
 	transition: 0.5s;
+	/* z-index: 17;
+
+	& svg {
+		z-index: 17;
+	} */
 `;
 
 export const Legend = styled.span`
@@ -72,6 +102,44 @@ export const Legend = styled.span`
 	transform: translateY(20px);
 `;
 
+// export const Indicator = styled.div`
+// 	position: absolute;
+// 	top: -50%;
+// 	width: 70px;
+// 	height: 70px;
+// 	background: ${({ theme }) => theme.secondColor};
+// 	border-radius: 50%;
+// 	z-index: 14;
+// 	border: 6px solid ${({ theme }) => theme.background};
+// 	transition: 0.5s;
+
+// 	&::before {
+// 		content: "";
+// 		position: absolute;
+// 		top: 50%;
+// 		left: -22px;
+// 		width: 20px;
+// 		height: 20px;
+// 		background-color: transparent;
+// 		border-top-right-radius: 20px;
+// 		box-shadow: 0px -10px 0 0 ${({ theme }) => theme.background};
+// 		z-index: 0;
+// 	}
+
+// 	&::after {
+// 		content: "";
+// 		position: absolute;
+// 		top: 50%;
+// 		right: -22px;
+// 		width: 20px;
+// 		height: 20px;
+// 		background-color: transparent;
+// 		border-top-left-radius: 20px;
+// 		box-shadow: 0px -10px 0 0 ${({ theme }) => theme.background};
+// 		z-index: 0;
+// 	}
+// `;
+
 export const Indicator = styled.div`
 	position: absolute;
 	top: -50%;
@@ -79,30 +147,7 @@ export const Indicator = styled.div`
 	height: 70px;
 	background: ${({ theme }) => theme.secondColor};
 	border-radius: 50%;
+	z-index: 14;
 	border: 6px solid ${({ theme }) => theme.background};
 	transition: 0.5s;
-
-	&::before {
-		content: "";
-		position: absolute;
-		top: 50%;
-		left: -22px;
-		width: 20px;
-		height: 20px;
-		background-color: transparent;
-		border-top-right-radius: 20px;
-		box-shadow: 0px -10px 0 0 ${({ theme }) => theme.background};
-	}
-
-	&::after {
-		content: "";
-		position: absolute;
-		top: 50%;
-		right: -22px;
-		width: 20px;
-		height: 20px;
-		background-color: transparent;
-		border-top-left-radius: 20px;
-		box-shadow: 0px -10px 0 0 ${({ theme }) => theme.background};
-	}
 `;

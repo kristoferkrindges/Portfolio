@@ -22,10 +22,10 @@ import {
 	JavaIcon,
 	NodeIcon,
 	PythonIcon,
+	TrelloIcon,
 } from "@/app/components/icons/fAIcons.styled";
 import {
 	CSharpIcon,
-	DotNetIcon,
 	FigmaIcon,
 	PhotoshopIcon,
 	PostmanIcon,
@@ -83,19 +83,19 @@ export default function Card({ name, icon }: CardProps) {
 			},
 		],
 		Tools: [
-			{ number: 1, name: "VsCode", porcents: "95", icon: <VsCodeIcon /> },
-			{ number: 2, name: "POSTMAN", porcents: "85", icon: <PostmanIcon /> },
 			{
-				number: 3,
+				number: 1,
+				name: "TRELLO",
+				porcents: "95",
+				icon: <TrelloIcon />,
+			},
+			{ number: 2, name: "VSCODE", porcents: "90", icon: <VsCodeIcon /> },
+			{ number: 3, name: "POSTMAN", porcents: "80", icon: <PostmanIcon /> },
+			{
+				number: 4,
 				name: "GIT",
 				porcents: "75",
 				icon: <GitIcon />,
-			},
-			{
-				number: 4,
-				name: "PHOTOSHOP",
-				porcents: "35",
-				icon: <PhotoshopIcon />,
 			},
 		],
 	};

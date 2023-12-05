@@ -1,5 +1,5 @@
-import ThemeProvider from "./providers/themeProvider";
+import InitialsTemplate from "./templates/initials";
 
 export default function Initials() {
-	return <ThemeProvider />;
+	return <InitialsTemplate />;
 }

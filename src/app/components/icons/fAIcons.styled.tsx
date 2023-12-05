@@ -8,7 +8,16 @@ import {
 	FaChrome,
 	FaLightbulb,
 	FaGitAlt,
+	FaPlus,
+	FaTrello,
+	FaCopyright,
 } from "react-icons/fa";
+
+export const CopyRightIcon = styled(FaCopyright)``;
+
+export const TrelloIcon = styled(FaTrello)``;
+
+export const PlusIcon = styled(FaPlus)``;
 
 export const GitIcon = styled(FaGitAlt)``;
 

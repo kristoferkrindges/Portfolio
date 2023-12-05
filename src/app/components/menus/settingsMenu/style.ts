@@ -18,6 +18,8 @@ export const DropMenu = styled.div`
 
 export const Item = styled.div`
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	gap: 0.5rem;
 	padding: 1rem;
 	border-radius: 2rem;
@@ -28,7 +30,7 @@ export const Item = styled.div`
 
 	&:hover {
 		background: ${({ theme }) => theme.secondColor};
-		color: ${({ theme }) => theme.textInverse};
+		color: white;
 	}
 `;
 
