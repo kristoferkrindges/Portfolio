@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import { ThemeProvider as ThemeStyle } from "styled-components";
 import { darkTheme, lightTheme } from "../styles/theme";
 import { GlobalStyle } from "../styles/globalStyles";
@@ -16,8 +16,15 @@ interface ThemeContextProps {
 export const ThemeContext = createContext<ThemeContextProps | null>(null);
 
 export default function ThemeProvider() {
-	const local = localStorage.getItem("darkmode");
-	const [theme, setTheme] = useState(local ? local : "light");
+	const [theme, setTheme] = useState("light");
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const local = localStorage.getItem("darkmode");
+			if (local) {
+				setTheme(local);
+			}
+		}
+	}, []);
 	const themeStyle = theme === "light" ? lightTheme : darkTheme;
 
 	const contextValue: ThemeContextProps = { setTheme, theme };

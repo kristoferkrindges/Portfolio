@@ -22,22 +22,20 @@ export default function SocialButtons({ type }: SocialButtonsProps) {
 		<>
 			{type === "Github" && (
 				<Link href="https://github.com/kristoferkrindges">
-					<SocialButton
-						backgroundColor={theme === "dark" ? `#ffff` : `#171616`}
-					>
+					<SocialButton color={theme === "dark" ? `#ffff` : `#171616`}>
 						<GithubIcon />
 					</SocialButton>
 				</Link>
 			)}
 			{type === "Linkedin" && (
 				<Link href="https://www.linkedin.com/in/kristoferkrindgesprofile/">
-					<SocialButton backgroundColor={`#2464AE`}>
+					<SocialButton color={`#2464AE`}>
 						<LinkedinIcon />
 					</SocialButton>
 				</Link>
 			)}
 			{type === "Gmail" && (
-				<SocialButton backgroundColor={`#c71610`} onClick={handleEmailClick}>
+				<SocialButton color={`#c71610`} onClick={handleEmailClick}>
 					<GmailIcon />
 				</SocialButton>
 			)}

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface SocialButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	backgroundColor: string;
+	color: string;
 }
 
 export const CardContainer = styled.div`

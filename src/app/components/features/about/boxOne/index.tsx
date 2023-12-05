@@ -90,7 +90,7 @@ const BoxOneAbout = () => {
 						whileInView="visible"
 						transition={{ type: "tween", duration: 0.5 + index * 0.2 }}
 					>
-						<SocialButton backgroundColor={button.backgroundColor}>
+						<SocialButton color={button.backgroundColor}>
 							{button.icon}
 						</SocialButton>
 					</motion.div>
