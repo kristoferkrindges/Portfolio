@@ -1,3 +1,4 @@
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { Navigation, Item, Indicator } from "./style";
 import {
@@ -7,108 +8,74 @@ import {
 	ProjectsIcon,
 	SettingsIcon,
 } from "../../icons/iO5Icons.styled";
-import { useContext, useState } from "react";
 import { Icon, Legend, List } from "../mobileMenu/style";
 import { LanguageContext } from "@/app/contexts/languageContext";
 
 export default function NavigationMenu() {
-	const [itemActive, setItemActive] = useState("Home");
+	const [activeSection, setActiveSection] = useState("Home");
 
 	const { language } = useContext(LanguageContext) || {};
 
-	const itemActiveStyles: { [key: string]: { transform: string } } = {
-		Home: { transform: `translateX(calc(70px*0))` },
-		About: { transform: `translateX(calc(70px*1))` },
-		Skills: { transform: `translateX(calc(70px*2))` },
-		Projects: { transform: `translateX(calc(70px*3))` },
-		Contact: { transform: `translateX(calc(70px*4))` },
+	const handleScroll = () => {
+		const scrollPosition = window.scrollY;
+		const sections = document.querySelectorAll("section");
+
+		sections.forEach((section) => {
+			const { top, bottom } = section.getBoundingClientRect();
+
+			// Verifica se a seção está pelo menos 50% visível na tela
+			if (top <= window.innerHeight / 2 && bottom >= window.innerHeight / 2) {
+				setActiveSection(section.id);
+			}
+		});
 	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+
+		// Limpeza do evento quando o componente for desmontado
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []); // Adiciona dependências se necessário
+
+	const sections = [
+		{ id: "Home", text: "Inicio", icon: <HomeIcon /> },
+		{ id: "About", text: "Sobre", icon: <AboutIcon /> },
+		{ id: "Skills", text: "Habilidades", icon: <SettingsIcon /> },
+		{ id: "Projects", text: "Projetos", icon: <ProjectsIcon /> },
+		{ id: "Contact", text: "Contato", icon: <ContactIcon /> },
+	];
 
 	return (
 		<Navigation>
 			<List>
-				<Item
-					className={itemActive === "Home" ? "active" : "drop"}
-					onClick={() => setItemActive("Home")}
-				>
-					<Link href="#Home">
-						<Icon
-							className="icon"
-							style={itemActive === "Home" ? { color: "white" } : {}}
-						>
-							<HomeIcon />
-						</Icon>
-						<Legend className="text">
-							{language === "Portuguese" ? "Inicio" : "Home"}
-						</Legend>
-					</Link>
-				</Item>
-				<Item
-					className={itemActive === "About" ? "active" : "drop"}
-					onClick={() => setItemActive("About")}
-				>
-					<Link href="#About">
-						<Icon
-							className="icon"
-							style={itemActive === "About" ? { color: "white" } : {}}
-						>
-							<AboutIcon />
-						</Icon>
-						<Legend className="text">
-							{language === "Portuguese" ? "Sobre" : "About"}
-						</Legend>
-					</Link>
-				</Item>
-				<Item
-					className={itemActive === "Skills" ? "active" : "drop"}
-					onClick={() => setItemActive("Skills")}
-				>
-					<Link href="#Skills">
-						<Icon
-							className="icon"
-							style={itemActive === "Skills" ? { color: "white" } : {}}
-						>
-							<SettingsIcon />
-						</Icon>
-						<Legend className="text">
-							{language === "Portuguese" ? "Habilidades" : "Skills"}
-						</Legend>
-					</Link>
-				</Item>
-				<Item
-					className={itemActive === "Projects" ? "active" : "drop"}
-					onClick={() => setItemActive("Projects")}
-				>
-					<Link href="#Projects">
-						<Icon
-							className="icon"
-							style={itemActive === "Projects" ? { color: "white" } : {}}
-						>
-							<ProjectsIcon />
-						</Icon>
-						<Legend className="text">
-							{language === "Portuguese" ? "Projetos" : "Projects"}
-						</Legend>
-					</Link>
-				</Item>
-				<Item
-					className={itemActive === "Contact" ? "active" : "drop"}
-					onClick={() => setItemActive("Contact")}
-				>
-					<Link href="#Contact">
-						<Icon
-							className="icon"
-							style={itemActive === "Contact" ? { color: "white" } : {}}
-						>
-							<ContactIcon />
-						</Icon>
-						<Legend className="text">
-							{language === "Portuguese" ? "Contato" : "Contact"}
-						</Legend>
-					</Link>
-				</Item>
+				{sections.map((section) => (
+					<Item
+						key={section.id}
+						className={activeSection === section.id ? "active" : "drop"}
+					>
+						<Link href={`#${section.id}`}>
+							<Icon
+								className="icon"
+								style={activeSection === section.id ? { color: "white" } : {}}
+							>
+								{section.icon}
+							</Icon>
 
-				<Indicator style={itemActiveStyles[itemActive]} />
+							<Legend className="text">
+								{language === "Portuguese" ? section.text : section.id}
+							</Legend>
+						</Link>
+					</Item>
+				))}
+				<Indicator
+					style={{
+						transform: `translateX(calc(70px * ${sections.findIndex(
+							(section) => section.id === activeSection
+						)}))`,
+					}}
+				/>
 			</List>
 		</Navigation>
 	);

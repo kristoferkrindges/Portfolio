@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const Card = styled.section`
 	display: none;
 	@media only screen and (max-width: 999px) {
 		display: flex;

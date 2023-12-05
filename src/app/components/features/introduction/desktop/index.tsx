@@ -6,7 +6,7 @@ import Circle from "./circle";
 
 export default function DesktopIntroduction() {
 	return (
-		<DesktopContainer>
+		<DesktopContainer id="Home">
 			<BoxContainer>
 				<Card>
 					<BoxOne />
