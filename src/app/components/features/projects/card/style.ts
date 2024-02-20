@@ -106,6 +106,12 @@ export const Social = styled.div`
 		color: ${({ theme }) => theme.text};
 	}
 
+	&:hover {
+		svg {
+			color: ${({ theme }) => theme.textInverse};
+		}
+	}
+
 	@media only screen and (max-width: 370px) {
 		font-size: 0.8rem;
 		bottom: 3%;

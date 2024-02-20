@@ -3,8 +3,8 @@ import { Cards, ProjectSection } from "./style";
 import { LanguageContext } from "@/app/contexts/languageContext";
 import { H2, H5 } from "../../titles/index.styled";
 import Card from "./card";
-import TravelingWhite from "../../../assets/images/TravelingHomeWhite.png";
-import TravelingDark from "../../../assets/images/TravelingHomeDark.png";
+import TravelingWhite from "../../../assets/images/home_white.png";
+import TravelingDark from "../../../assets/images/home_dark.png";
 import { ThemeContext } from "@/app/providers/themeProvider";
 import TrampoFácil from "../../../assets/images/trampowhite.png";
 import TrampoFácilDark from "../../../assets/images/trampodark.png";
@@ -26,13 +26,13 @@ export default function Projects() {
 					: "The Travelling project is a social media. Which has the possibility for the user to create posts, interact with posts through likes and comments, edit their profile along with their photo, create stories and events, have the possibility of communicating via chat in real time, and finally, receive notifications about your posts and potential followers.",
 
 			git: "https://github.com/kristoferkrindges/Traveling",
-			link: "",
+			link: "https://travelingsocial.vercel.app/",
 			technologies: ["react", "java", "firebase", "node", "postgre"],
 		},
 		{
 			name: "SambaBurguer",
 			photo:
-				"https://camo.githubusercontent.com/f2d43d79afdb052cb32db988c1f6d5ea87289494cfdc7f9b2909a9428718a42b/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f313033383838393436373638393330343133372f313034393036393935383630323136363331342f66756e63696f6e6172696f732e706e67",
+				"https://camo.githubusercontent.com/8a077d37131d3ce6c427a5a2bea86c2c58a279cace60f6ae12a0c67c52501b27/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f313033383838393436373638393330343133372f313034393036383031343339313238333833342f686f6d652e706e67",
 			phrase:
 				language === "Portuguese"
 					? "O projeto foi desenvolvido em formato de site corporativo no qual um usuário ADMIN realizará os cadastros, atualizações, exclusões e visualizações parciais dos dados da respectiva empresa SambaBurguer."
